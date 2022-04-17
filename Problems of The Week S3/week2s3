@@ -1,0 +1,153 @@
+%%Copyright 2021. Any replication of this document is permissible. The primary package of this document is from cjquines%%
+
+%%PRIMARY PREAMBLE%%
+\documentclass[11pt,paper=letter]{scrartcl}
+\usepackage[ boxthm, parskip]{cjquines}
+\usepackage{CJKutf8}
+\usepackage{jrobaob}
+
+
+
+\begin{document}
+
+
+\title{Week 2: Integration Bee Buzz}
+\author{\joshbluebf{Problems of the Week — Season 3}}
+\date{April 5, 2022}
+
+\maketitle
+\setlength{\unitlength}{1in}
+\begin{picture}(2,0)
+  \put(1.20,1.35){\hbox{\includegraphics[width=4.2in]{logo2.png}}}
+\end{picture}
+\vspace{-2em}
+
+
+\begin{abstract}
+Hello there! This is the second episode of the new season of my mathematical series, \joshbf{Problems of the Week}. This week, we will answer integration problems from  \joshbf{Integration Bees} that are organized and being held in the United States. 
+\end{abstract}
+
+\vspace{-2em}
+
+\section{Problems}
+
+\begin{problem}[\href{https://www2.latech.edu/~dmeng/IntergrationBee/MITqualifying_round_2013.pdf}{2013 MIT Integration Bee Qualifying Q3}] Evaluate $$\int\dfrac{(\log x)(\cos x) - (\sin x)(1/x)}{(\log x)^2} \hspace{2mm} dx.$$
+
+
+\end{problem}
+
+\begin{problem}[\href{https://www2.latech.edu/~dmeng/IntergrationBee/MITqualifying_round_2013.pdf}{2013 MIT Integration Bee Qualifying Q11 ; Altered)}] Evaluate $$\int^{\pi/2}_0 \sin^2 x \cos^2 x \hspace{2mm} dx.$$
+
+
+\end{problem}
+
+\begin{problem}[\href{https://www.mit.edu/people/ehjin/files/FebHMMT2020FinalIntBee.pdf}{2020 HMMT Integration Bee Finals Q5}] Evaluate the following integral: $$\int^{1}_0 \cbrt{x\cbrt{x\cbrt{x\cbrt{...}}}} \hspace{2mm} dx.$$
+
+
+
+\end{problem}
+
+
+\begin{problem}[\href{https://www.mit.edu/~ehjin/files/MarHMMT2021QualIntBee.pdf}{2021 HMMT Integration Bee Qualifying Q2}] Evaluate the following integral: $$\int^{\int^1_0 x \hspace{1mm} dx}_{\int^1_0 x^2 \hspace{1mm} dx}. x^3\hspace{2mm} dx.$$
+
+\end{problem}
+
+\newpage
+
+\section{Solutions}
+
+\subsection{Problem 1.1}
+
+\vspace{2mm}
+
+\begin{mdframed}[style=jradduemmdbox, frametitle = \textbf{Problem 1.1} (\href{https://www2.latech.edu/~dmeng/IntergrationBee/MITqualifying_round_2013.pdf}{2013 MIT Integration Bee Qualifying Q3})] Evaluate $$\int\dfrac{(\log x)(\cos x) - (\sin x)(1/x)}{(\log x)^2} \hspace{2mm} dx.$$
+
+\end{mdframed}
+
+\ans{$\frac{\sin x}{\log x} + C$}
+
+\sol At first glance, we can rewrite the inner function within the integral into this: $$\implies \dfrac{(\log x)(\cos x) - (\sin x)(1/x)}{(\log x)^2} \Longleftrightarrow \dfrac{(\log x)(\sin x)' - (\sin x)(\log x)'}{(\log x)^2} .$$ Notice that this is a form of the quotient rule of the derivatives. We can substitute $\log x = n(x)$ and $\sin x = m(x)$. Then the following equation can be transformed into $$\implies \dfrac{m'(x)\cdot n(x) - n'(x) \cdot m(x)}{(n(x))^2} = \ddx \left( \dfrac{m(x)}{n(x)} + C \right) .$$Hence our integral must be equal to $\boxed{\dfrac{\sin x}{\log x} + C}$.
+
+\subsection{Problem 1.2}
+
+\vspace{2mm}
+
+\begin{mdframed}[style=jradduemmdbox, frametitle = \textbf{Problem 1.2} (\href{https://www2.latech.edu/~dmeng/IntergrationBee/MITqualifying_round_2013.pdf}{2013 MIT Integration Bee Qualifying Q11}; Altered)] Evaluate $$\int^{\pi/2}_0 \sin^2 x \cos^2 x \hspace{2mm} dx.$$
+
+
+\end{mdframed}
+
+\ans{$\frac{\pi}{16}$}
+
+\sol Obviously, we cannot do any $u$-substitution nor integration by parts. Luckily, we have one theorem that can help us integrate the expression and that is the \joshbf{Wallis Formula. }
+
+\begin{thmboxed}[Wallis Formula]
+There exists a function $f(\theta)$ for some $\theta \in [-\pi, \pi]$ such that $f(\theta) = \sin^{m} \theta \cdot \cos^{n} \theta \hspace{2mm} d\theta$ and $$\int^{\pi/2}_0\sin^{m} \theta \cdot \cos^{n} \theta \hspace{2mm} d\theta = \dfrac{[(m-1)(m-3)..(2 \hspace{1mm} \text{or} \hspace{1mm} 1)][(n-1)(n-3)..(2 \hspace{1mm} \text{or} \hspace{1mm} 1)]}{(m+n)(m+n-2)..(2 \hspace{1mm} \text{or} \hspace{1mm} 1)} \cdot \alpha$$ where $\alpha = \pi /2$ when both $m$ and $n$ are even or $\alpha = 1$, if otherwise, and $m,n \neq 1.$
+
+\end{thmboxed}
+\newpage
+
+Applying the formula, we have: $$\int^{\pi/2}_0\sin^{2} x\cdot \cos^{2} x\hspace{2mm} dx = \dfrac{(1)(1)}{(4)(2)(1)} \cdot (\pi /2) = \boxed{\dfrac{\pi}{16}.}$$
+
+\subsection{Problem 1.3}
+
+\vspace{2mm}
+
+\begin{mdframed}[style=jradduemmdbox, frametitle = \textbf{Problem 1.3} (\href{https://www.mit.edu/people/ehjin/files/FebHMMT2020FinalIntBee.pdf}{2020 HMMT Integration Bee Finals Q5})] Evaluate the following integral: $$\int^{1}_0 \cbrt{x\cbrt{x\cbrt{x\cbrt{...}}}} \hspace{2mm} dx.$$
+
+
+\end{mdframed}
+
+\ans{$\frac{2}{3}$}
+
+\sol The following integral can be rewritten into $$\implies \int^{1}_0 x^{\frac{1}{3}} x^{\frac{1}{9}} x^{\frac{1}{27}}x^{\frac{1}{81}}....  =  \int^{1}_0 x^{\frac{1}{3}+\frac{1}{9}+\frac{1}{27}+\frac{1}{81}+...} \hspace{2mm} dx \Longleftrightarrow \int^{1}_0 x^{\frac{\frac{1}{3}}{\frac{2}{3}}} \hspace{2mm} dx = \int^{1}_0 x^{\frac{1}{2}} \hspace{2mm} dx.$$Notice that the exponent is an infinite geometric series whereas both the first term and common ratio is equivalent to $\frac{1}{3}.$ $$\implies \int^{1}_0 x^{\frac{1}{2}} \hspace{2mm} dx = \left[ \dfrac{x^{\frac{1}{2}+1}}{\frac{1}{2}+1} \right]^{1}_0  = \left[ \dfrac{2x^{\frac{3}{2}}}{3} \right]^{1}_0 = \dfrac{2}{3} - \dfrac{0}{3} = \boxed{\dfrac{2}{3}}.$$ Hence, this should be our final answer. 
+
+\subsection{Problem 1.4}
+
+\vspace{2mm}
+
+\begin{mdframed}[style=jradduemmdbox, frametitle = \textbf{Problem 1.4} (\href{https://www.mit.edu/~ehjin/files/MarHMMT2021QualIntBee.pdf}{2021 HMMT Integration Bee Qualifying Q2})] Evaluate the following integral: $$\int^{\int^1_0 x \hspace{1mm} dx}_{\int^1_0 x^2 \hspace{1mm} dx}. x^3\hspace{2mm} dx.$$
+
+\end{mdframed}
+
+\ans{$\dfrac{65}{5184}$}
+
+\sol The following integral can be rewritten into this form $$\implies \int^{\frac{1}{2}}_{\frac{1}{3}} x^3 \hspace{2mm} dx$$. Now, we can safely integrate the expression and $$\left[\dfrac{x^4}{4}\right]^{\frac{1}{2}}_{\frac{1}{3}} \implies \dfrac{(\frac{1}{2})^4 - (\frac{1}{3})^4}{4} = \dfrac{\frac{81-16}{16(81)}}{4} = \dfrac{65}{5184}.$$
+
+\newpage
+
+\section{Closing remarks}
+
+The following PDF is free of charge and everyone is encouraged to reproduce this kind of documents since this \joshbf{Problems of the Week} documents is for the general public.  The following PDF is powered by LaTeX. You can find more of these on my \href{https://sites.google.com/addu.edu.ph/joshrobertobaob/mathematics/problems-of-the-week}{website.} If you see any typos, corrections, and should you have any inquiries, free to contact me at \mailto{jrdobaob@addu.edu.ph.}
+
+\subsection*{Edition log}
+ 
+ This section will help you to track the editions of this reviewers. That is why, expect many revisions from this article.
+ 
+ \begin{center}
+ 
+\begin{tabular}{|p{4cm}|p{4cm}|p{6cm}|}
+    \hline
+    
+  {\centering \joshbf{Time}} & \joshbf{Releasing Date} & \joshbluebf{Notes about the edition}\\
+  
+    \hline
+    
+    9:23AM & April 05, 2022 &
+This is the first version. Official release\\
+    \hline
+    
+  9:00AM & April 07, 2022 &
+Typo fixing on Problem 1.4. \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{9cm}
+
+\begin{center}
+\includegraphics[width=3in]{JOSH ROBERT OBAOB (2).png}
+\end{center}
+
+
+\end{document}
