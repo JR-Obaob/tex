@@ -1,0 +1,465 @@
+%%Copyright 2021. Any replication of this document is permissible. The primary package of this document is from cjquines%%
+
+%%PRIMARY PREAMBLE%%
+\documentclass[13pt,paper=letter]{scrartcl}
+\usepackage[ boxthm, parskip]{cjquines}
+\usepackage{CJKutf8}
+\usepackage{jrobaob}
+
+
+
+\begin{document}
+
+
+\title{Week 3: Third Episode of the Third Season}
+\author{\joshbluebf{Problems of the Week — Season 3}}
+\date{April 12, 2022}
+
+\maketitle
+\setlength{\unitlength}{1in}
+\begin{picture}(2,0)
+  \put(1.20,1.45){\hbox{\includegraphics[width=4.2in]{logo2.png}}}
+\end{picture}
+\vspace{-2em}
+
+
+\begin{abstract}
+Hello there! This is the third episode of the 3rd season of my mathematical series, \joshbf{Problems of the Week}. We will answer one recurrence problem, one Diophantine equation problem and finally, a geometry proof problem. Hence, a total of three solved problems. Enjoy.
+\end{abstract}
+
+\vspace{-2em}
+
+\section{Problems}
+
+\begin{problem}[Recurrence] Suppose a sequence $\{a_n\}$ (with $n \geq 1$) of positive integers satisfy $a_0 = 8$ and $a_1 = 30,$ and for $n \geq 2,$ $a_n = 8a_{n-1} - 15a_{n-2}$. Find the remainder of $a_{2020}$ divided by 7. 
+
+
+\end{problem}
+
+
+
+\begin{problem}[Diophantine equations] Find all $(x,y)\in\mathbb{Z},$ such that $x^2 +4y^2 -2xy-2x-4y-8=0$.
+
+
+\end{problem}
+\
+
+\begin{problem}[\href{https://artofproblemsolving.com/community/c4813_2015_amc_10}{AMC 10B 2015/22}] In the figure shown below, $ABCDE$ is a regular pentagon and $AG=1$. What is $FG+JH+CD$?
+
+\begin{center}
+    
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,447); %set diagram left start at 0, and has height of 447
+
+%Shape: Triangle [id:dp40387565372160794] 
+\draw   (267.53,80.86) -- (324.76,251) -- (210.29,251) -- cycle ;
+%Straight Lines [id:da4114786930395147] 
+\draw    (169.16,144.4) -- (210.29,251) ;
+\draw [shift={(210.29,251)}, rotate = 68.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(169.16,144.4)}, rotate = 68.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da7066108621152787] 
+\draw    (169.16,144.4) -- (267.53,80.86) ;
+\draw [shift={(267.53,80.86)}, rotate = 327.14] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(169.16,144.4)}, rotate = 327.14] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da6840929326463221] 
+\draw    (267.53,80.86) -- (367.64,146.24) ;
+\draw [shift={(367.64,146.24)}, rotate = 33.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(267.53,80.86)}, rotate = 33.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da35957518582624926] 
+\draw    (367.64,146.24) -- (324.56,252.08) ;
+\draw [shift={(324.56,252.08)}, rotate = 112.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(367.64,146.24)}, rotate = 112.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da15665243343311164] 
+\draw    (289.15,145.4) -- (231.4,187.4) ;
+%Straight Lines [id:da3880180228777381] 
+\draw    (289.15,145.4) -- (268.57,211.94) ;
+%Straight Lines [id:da42786993402067997] 
+\draw    (245.24,145.4) -- (268.57,211.94) ;
+%Straight Lines [id:da8052059118567354] 
+\draw    (304.4,188.4) -- (245.24,145.4) ;
+%Straight Lines [id:da23389406143031333] 
+\draw    (304.4,188.4) -- (231.4,187.4) ;
+%Straight Lines [id:da2613398689551558] 
+\draw    (367.64,146.24) -- (210.29,251) ;
+%Straight Lines [id:da025197565301284808] 
+\draw    (169.16,144.4) -- (367.64,146.24) ;
+%Straight Lines [id:da772482574606747] 
+\draw    (169.16,144.4) -- (324.56,252.08) ;
+
+
+% Text Node
+\draw (319.79,195.07) node    {$H$};
+% Text Node
+\draw (217.12,194.07) node    {$J$};
+% Text Node
+\draw (268.45,230.4) node    {$I$};
+% Text Node
+\draw (298,134.4) node    {$G$};
+% Text Node
+\draw (237.79,133.87) node    {$F$};
+% Text Node
+\draw (157.12,142.53) node    {$E$};
+% Text Node
+\draw (199.12,255.87) node    {$D$};
+% Text Node
+\draw (335.79,257.2) node    {$C$};
+% Text Node
+\draw (378.99,144.8) node    {$B$};
+% Text Node
+\draw (266.99,65.2) node    {$A$};
+
+
+\end{tikzpicture}
+\end{center}
+
+
+
+\end{problem}
+
+
+
+\newpage
+
+\section{Solutions}
+
+\subsection{Problem 1.1}
+
+\vspace{2mm}
+
+\begin{mdframed}[style=jradduemmdbox, frametitle = \textbf{Problem 1.1} (Recurrence)] Suppose a sequence $\{a_n\}$ (with $n \geq 1$) of positive integers satisfy $a_0 = 8$ and $a_1 = 30,$ and for $n \geq 2,$ $a_n = 8a_{n-1} - 15a_{n-2}$. Find the remainder of $a_{2020}$ divided by 7.
+
+\end{mdframed}
+
+\ans{$5$}
+
+\sol Let us first find the closed form of $a_n$.By characteristic equations, $$r^2 = 8r - 15 \Longleftrightarrow r^2 - 8r + 15 = (r-5)(r-3) = 0.$$ This implies that $a_n = A\cdot5^n + B\cdot3^n $ where $A$ and $B$ are numerical coefficients. To find these coefficients, we use the values of $a_1$ and $a_0$ and solve it by system of equations:
+
+\begin{equation*}
+    \begin{cases}
+    30 = 5A+3B & \qquad (1) \\ 8 = A + B & \qquad (2)
+    \end{cases}
+\end{equation*}
+
+In order to solve for $(A,B)$, we multiply the (2) second equation by 5, then subtract it by the (1) first equation. As a result, we get that $B=5$. 
+
+Substituting $B$ with 5 in the (2) second equation, we get that $A=3$. This implies that $a_n = 3\cdot5^n + 5\cdot3^n.$ Evaluating $a_{2020} \pmod{7}$ gives the following:
+
+\vspace{-3mm}
+
+\begin{equation*}
+    \begin{array}{lllll}
+        3 \cdot 5^{2020} +   5 \cdot 3^{2020} 
+           & \equiv & 3 \cdot 5^{4} +   5 \cdot 3^{4} & \pmod{7} & \text{\footnotesize{(By Fermat's Little Theorem)}}\\
+   
+           
+           & \equiv & 3 \cdot 25^{2} +   5 \cdot 9^{2} & \pmod{7} & \\
+         
+           
+           & \equiv & 48 +   20 & \pmod{7} & \\
+           
+            & \equiv & 68 & \pmod{7} & \\
+            
+             & \equiv & \boxed{5} & \pmod{7} & \\
+    \end{array}
+\end{equation*}
+
+\subsection{Problem 1.2}
+
+\vspace{2mm}
+
+\begin{mdframed}[style=jradduemmdbox, frametitle = \textbf{Problem 1.2} (Diophantine equations)]  Find all $(x,y)\in\mathbb{Z},$ such that $x^2 +4y^2 -2xy-2x-4y-8=0$.
+
+\end{mdframed}
+
+\ans{$(3,5)$,$(3,-1)$}
+
+\sol The equation can be rewritten into the following:
+
+\vspace{-3mm}
+
+\begin{equation*}
+    \begin{array}{lll}
+     \hspace{21mm}  x^2 - 4xy + 4y^2 -2xy -2x -4y - 8  & =& 0 - 4xy  \\
+       
+       \hspace{21mm} (x-y)^2 + 2xy -2x -4y - 8  & =& 0   \\
+         
+         \hspace{12mm} (x-y)^2 + 2(xy -x -2y +2) - 12  & =& 0   \\
+         
+        \hspace{28mm}  (x-y)^2 + 2(x-2)(y-1)   & =& 12   \\
+    \end{array}
+\end{equation*}
+ 
+Since we are looking for integer pairs $(x,y)$ then we can divide the problem into three cases.
+
+
+
+\joshbf{\raggedright  Case \# 1:} If both $x$ and $y$ are positive, then only $\boxed{(3,5)}$ can satisfy.
+
+\vspace{1mm}
+
+\joshbf{\raggedright  Case \# 2:} If both $x$ and $y$ are negative, no solution can suffices the condition.
+
+
+\vspace{1mm}
+
+\joshbf{\raggedright  Case \# 3:} If one of the variables in $(x,y)$ is negative or non-negative (and vice versa), then $\boxed{(3,-1)}$ can satisfy.
+
+\boxed{$\therefore$ Only $(3,5)$ and $(3,-1)$ can satisfy the equation. }
+
+
+\subsection{Problem 1.3}
+
+\vspace{2mm}
+
+\begin{mdframed}[style=jradduemmdbox, frametitle = \textbf{Problem 1.3} (\href{https://artofproblemsolving.com/community/c4813_2015_amc_10}{AMC 10B 2015/22})] In the figure shown below, $ABCDE$ is a regular pentagon and $AG=1$. What is $FG+JH+CD$?
+
+\begin{center}
+    
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,447); %set diagram left start at 0, and has height of 447
+
+%Shape: Triangle [id:dp40387565372160794] 
+\draw   (267.53,80.86) -- (324.76,251) -- (210.29,251) -- cycle ;
+%Straight Lines [id:da4114786930395147] 
+\draw    (169.16,144.4) -- (210.29,251) ;
+\draw [shift={(210.29,251)}, rotate = 68.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(169.16,144.4)}, rotate = 68.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da7066108621152787] 
+\draw    (169.16,144.4) -- (267.53,80.86) ;
+\draw [shift={(267.53,80.86)}, rotate = 327.14] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(169.16,144.4)}, rotate = 327.14] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da6840929326463221] 
+\draw    (267.53,80.86) -- (367.64,146.24) ;
+\draw [shift={(367.64,146.24)}, rotate = 33.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(267.53,80.86)}, rotate = 33.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da35957518582624926] 
+\draw    (367.64,146.24) -- (324.56,252.08) ;
+\draw [shift={(324.56,252.08)}, rotate = 112.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(367.64,146.24)}, rotate = 112.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da15665243343311164] 
+\draw    (289.15,145.4) -- (231.4,187.4) ;
+%Straight Lines [id:da3880180228777381] 
+\draw    (289.15,145.4) -- (268.57,211.94) ;
+%Straight Lines [id:da42786993402067997] 
+\draw    (245.24,145.4) -- (268.57,211.94) ;
+%Straight Lines [id:da8052059118567354] 
+\draw    (304.4,188.4) -- (245.24,145.4) ;
+%Straight Lines [id:da23389406143031333] 
+\draw    (304.4,188.4) -- (231.4,187.4) ;
+%Straight Lines [id:da2613398689551558] 
+\draw    (367.64,146.24) -- (210.29,251) ;
+%Straight Lines [id:da025197565301284808] 
+\draw    (169.16,144.4) -- (367.64,146.24) ;
+%Straight Lines [id:da772482574606747] 
+\draw    (169.16,144.4) -- (324.56,252.08) ;
+
+
+% Text Node
+\draw (319.79,195.07) node    {$H$};
+% Text Node
+\draw (217.12,194.07) node    {$J$};
+% Text Node
+\draw (268.45,230.4) node    {$I$};
+% Text Node
+\draw (298,134.4) node    {$G$};
+% Text Node
+\draw (237.79,133.87) node    {$F$};
+% Text Node
+\draw (157.12,142.53) node    {$E$};
+% Text Node
+\draw (199.12,255.87) node    {$D$};
+% Text Node
+\draw (335.79,257.2) node    {$C$};
+% Text Node
+\draw (378.99,144.8) node    {$B$};
+% Text Node
+\draw (266.99,65.2) node    {$A$};
+
+
+\end{tikzpicture}
+\end{center}
+ \end{mdframed}
+
+\ans{$1+\sqrt{5}$}
+
+
+\sol We will color code the sides that are included in the sum for us to be guided. 
+
+\begin{center}
+    
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,447); %set diagram left start at 0, and has height of 447
+
+%Shape: Triangle [id:dp08118355205707117] 
+\draw   (457.53,77.86) -- (514.76,248) -- (400.29,248) -- cycle ;
+%Straight Lines [id:da9630494228353914] 
+\draw    (359.16,141.4) -- (400.29,248) ;
+\draw [shift={(400.29,248)}, rotate = 68.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(359.16,141.4)}, rotate = 68.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da4744586475216577] 
+\draw    (359.16,141.4) -- (457.53,77.86) ;
+\draw [shift={(457.53,77.86)}, rotate = 327.14] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(359.16,141.4)}, rotate = 327.14] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da408649909952993] 
+\draw    (457.53,77.86) -- (557.64,143.24) ;
+\draw [shift={(557.64,143.24)}, rotate = 33.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(457.53,77.86)}, rotate = 33.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da8972357457285935] 
+\draw    (557.64,143.24) -- (514.56,249.08) ;
+\draw [shift={(514.56,249.08)}, rotate = 112.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(557.64,143.24)}, rotate = 112.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da32758544336069795] 
+\draw    (479.15,142.4) -- (421.4,184.4) ;
+%Straight Lines [id:da7330244843810434] 
+\draw    (479.15,142.4) -- (458.57,208.94) ;
+%Straight Lines [id:da33727738176167166] 
+\draw    (435.24,142.4) -- (458.57,208.94) ;
+%Straight Lines [id:da29191978615476977] 
+\draw    (494.4,185.4) -- (435.24,142.4) ;
+%Straight Lines [id:da8825167403558514] 
+\draw    (494.4,185.4) -- (421.4,184.4) ;
+%Straight Lines [id:da7117505210385466] 
+\draw    (557.64,143.24) -- (400.29,248) ;
+%Straight Lines [id:da729325047426683] 
+\draw    (359.16,141.4) -- (557.64,143.24) ;
+%Straight Lines [id:da7786895985927209] 
+\draw    (359.16,141.4) -- (514.56,249.08) ;
+%Straight Lines [id:da15073789478124255] 
+\draw [color={rgb, 255:red, 255; green, 4; blue, 4 }  ,draw opacity=1 ]   (435.24,142.4) -- (479.15,142.4) ;
+%Straight Lines [id:da4063225287347556] 
+\draw [color={rgb, 255:red, 4; green, 19; blue, 255 }  ,draw opacity=1 ]   (421.4,184.4) -- (494.4,185.4) ;
+%Straight Lines [id:da37209132248566656] 
+\draw [color={rgb, 255:red, 255; green, 214; blue, 4 }  ,draw opacity=1 ][line width=1.5]    (400.29,248) -- (514.56,249.08) ;
+
+% Text Node
+\draw (456.99,62.2) node    {$A$};
+% Text Node
+\draw (568.99,141.8) node    {$B$};
+% Text Node
+\draw (525.79,254.2) node    {$C$};
+% Text Node
+\draw (389.12,252.87) node    {$D$};
+% Text Node
+\draw (347.12,139.53) node    {$E$};
+% Text Node
+\draw (427.79,130.87) node    {$F$};
+% Text Node
+\draw (488,131.4) node    {$G$};
+% Text Node
+\draw (458.45,227.4) node    {$I$};
+% Text Node
+\draw (407.12,191.07) node    {$J$};
+% Text Node
+\draw (509.79,192.07) node    {$H$};
+
+
+\end{tikzpicture}
+\end{center}
+
+To make things simpler, we will focus on $\triangle ABE$ and the triangles that make up the figure. From that figure, we see that $\angle FEA = \angle FAE = \angle GBA = \angle GAB$ and $\angle AFG = \angle  AGF.$
+
+\begin{center}
+    
+
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,683); %set diagram left start at 0, and has height of 683
+
+%Shape: Polygon [id:ds7659358974314798] 
+\draw   (370.24,407.44) -- (171.76,405.6) -- (270.13,342.06) -- cycle ;
+%Straight Lines [id:da4562660762001167] 
+\draw    (171.76,405.6) -- (270.13,342.06) ;
+\draw [shift={(270.13,342.06)}, rotate = 327.14] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(171.76,405.6)}, rotate = 327.14] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da06230644390875839] 
+\draw    (370.24,407.44) -- (270.13,342.06) ;
+\draw [shift={(270.13,342.06)}, rotate = 213.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(370.24,407.44)}, rotate = 213.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Shape: Polygon [id:ds17984275858972043] 
+\draw   (270.13,342.06) -- (286.14,389.85) -- (291.75,406.6) -- (247.84,406.6) -- cycle ;
+%Shape: Arc [id:dp4204904911410381] 
+\draw  [draw opacity=0][fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=0.22 ] (283.16,351.12) .. controls (280.73,352.41) and (277.77,353.35) .. (274.5,353.79) -- (270.13,342.06) -- cycle ; \draw  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ] (283.16,351.12) .. controls (280.73,352.41) and (277.77,353.35) .. (274.5,353.79) ;
+%Shape: Arc [id:dp9109367199563203] 
+\draw  [draw opacity=0][fill={rgb, 255:red, 226; green, 74; blue, 77 }  ,fill opacity=0.22 ] (282.51,406.25) .. controls (282.64,403.21) and (285.23,400.63) .. (288.87,399.52) -- (292.95,406.52) -- cycle ; \draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ] (282.51,406.25) .. controls (282.64,403.21) and (285.23,400.63) .. (288.87,399.52) ;
+%Straight Lines [id:da39985500581190303] 
+\draw [color={rgb, 255:red, 255; green, 4; blue, 4 }  ,draw opacity=1 ]   (249.04,406.52) -- (292.95,406.52) ;
+
+% Text Node
+\draw (158.32,405.93) node    {$E$};
+% Text Node
+\draw (385.79,408.2) node    {$B$};
+% Text Node
+\draw (271.39,328) node    {$A$};
+% Text Node
+\draw (246.59,420.87) node    {$F$};
+% Text Node
+\draw (290.4,419.4) node    {$G$};
+% Text Node
+\draw (284.62,357.46) node  [font=\scriptsize,color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$x$};
+% Text Node
+\draw (277.43,395.06) node  [font=\tiny,color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$2x$};
+
+
+\end{tikzpicture}
+\end{center}
+
+We let $\angle GAB = x$. By angle chasing, $\angle AGF = 2x$ and $\angle FAG = 180-4x$. To find $x$, we use the fact that each interior angle of a regular pentagon measures $108 \dg$. Hence, $$\angle FAG + \angle EAF + \angle GAB = (180-4x) + x + x = 108 \dg \implies x = 36 \dg.$$ Finding $FG$ by law of cosines gives us \footnote{Try to find the value of $\cos 36$ by means that you can think of.}: $$\implies FG^2 = 2 - 2\cos 36 = 2 - 2\left(\frac{1+\sqrt{5}}{4}\right) =  \frac{3-\sqrt{5}}{2} \implies FG = \frac{\sqrt{5}-1}{2}.$$
+
+By law of cosines (to find $JH$), $$JH^2 = 2\left(\frac{1+\sqrt{5}}{2}\right)^2 - 2\left(\frac{1+\sqrt{5}}{2}\right)^2 \cos 36 = \left(\frac{1+\sqrt{5}}{2}\right)^2 \left(\frac{3+\sqrt{5}}{2}\right)  \implies JH = 1.$$
+
+By law of cosines (to find $AB$), $$AB^2 = 2 + 2\cos 72 = 2 + 2\left(\frac{\sqrt{5}-1}{4}\right)^2 = \frac{3 +\sqrt{5}}{2} \implies AB = \frac{\sqrt{5}+1}{2}.$$ Hence, $FG + JH + CD = \boxed{1+\sqrt{5.}}$
+
+\newpage
+
+\section{Closing remarks}
+
+The following PDF is free of charge and everyone is encouraged to share this kind of documents since these \joshbf{Problems of the Week} documents is for the general public.  The following PDF is powered by LaTeX. You can find more of these on my \href{https://sites.google.com/addu.edu.ph/joshrobertobaob/mathematics/problems-of-the-week}{website.} If you see any typos, corrections, and should you have any inquiries, free to contact me at \mailto{jrdobaob@addu.edu.ph.}
+
+\subsection*{Edition log}
+ 
+ This section will help you to track the editions of this reviewers. That is why, expect many revisions from this article.
+ 
+ \begin{center}
+ 
+\begin{tabular}{|p{4cm}|p{4cm}|p{6cm}|}
+    \hline
+    
+  {\centering \joshbf{Time}} & \joshbf{Releasing Date} & \joshbluebf{Notes about the edition}\\
+  
+    \hline
+    
+    12:00PM & April 12, 2022 &
+This is the first version. Official release\\
+    \hline
+    
+    8:00AM & April 13, 2022 &
+Improving the \joshbf{Solution 1} of \joshbf{Problem 1.1}, following the recommendations of Jeffrey Robles.\\
+    \hline
+  
+\end{tabular}
+\end{center}
+
+\vspace{6cm}
+
+\begin{center}
+\includegraphics[width=3in]{JOSH ROBERT OBAOB (2).png}
+\end{center}
+
+
+\end{document}
