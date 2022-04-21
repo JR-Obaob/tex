@@ -3,7 +3,7 @@
 %%REMINDER: This is only an 'auxiliary LaTeX package intended for my personal projects. 
 
 
-% jrobaob.sty; last update 2022-04-02 (Testing Period)
+% jrobaob.sty; last update 2022-04-21 (Testing Period)
 %
 % Copyright (c) 2022 Josh Robert Obaob
 %
@@ -35,6 +35,19 @@
 \newcommand{\phut}{\hat{p}}
 \newcommand{\qhut}{\hat{q}}
 \newcommand{\xscore}{\overline{X}}
+
+\DeclareRobustCommand{\PHP}{%
+  \begingroup
+  \leavevmode\,\vphantom{P}%
+  \dimen\z@=.5\fontcharht\font`P\relax
+  \dimen\tw@=0.33333\dimen\z@
+  \ooalign{%
+    \raisebox{\dimexpr\dimen\z@+2\dimen\tw@-0.4pt}{\rule{\fontcharwd\font`P}{0.4pt}}\cr
+    \raisebox{\dimexpr\dimen\z@+\dimen\tw@-0.2pt}{\rule{\fontcharwd\font`P}{0.4pt}}\cr
+    P\cr
+  }%
+  \,\endgroup
+}
 
 %%NEW SUB STYLE FOR MDFRAMED
 
