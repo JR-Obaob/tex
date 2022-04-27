@@ -3,7 +3,7 @@
 %%REMINDER: This is only an 'auxiliary LaTeX package intended for my personal projects. 
 
 
-% jrobaob.sty; last update 2022-04-21 (Testing Period)
+% jrobaob.sty; last update 2022-03-14 (Testing Period)
 %
 % Copyright (c) 2022 Josh Robert Obaob
 %
@@ -22,37 +22,32 @@
 \newcommand{\sol}{{\sffamily \bfseries Solution.}\;}
 \newcommand{\soln}[1]{{\sffamily \bfseries Solution #1.}\;}
 \newcommand{\probn}[1]{{\sffamily \bfseries  \color{DarkMidnightBlue} Problem #1.}\;}
+
+\newcommand{\exn}[1]{{\sffamily \bfseries  \color{DarkMidnightBlue} Example #1.}\;}
+
+\newcommand{\exrn}[1]{{\sffamily \bfseries  \color{DarkMidnightBlue} Exercise #1.}\;}
+
 \newcommand{\back}[1]{{\sffamily \bfseries Background.}\;}
 \newenvironment{rem}%
 {\noindent \ignorespaces \small \sffamily \sansmath {\bfseries Remark.}}%
 {\ignorespacesafterend}
 
+
+
+
 \newcommand{\joshbluebf}[1]{{\bfseries \sffamily \color{DarkMidnightBlue} #1}}
 \newcommand{\joshbf}[1]{{\bfseries \sffamily \color{black} #1}}
 
-%%%STATISTICS:
+%%ADDITIONAL STYLES FOR THMBOXED
 
-\newcommand{\phut}{\hat{p}}
-\newcommand{\qhut}{\hat{q}}
-\newcommand{\xscore}{\overline{X}}
 
-\DeclareRobustCommand{\PHP}{%
-  \begingroup
-  \leavevmode\,\vphantom{P}%
-  \dimen\z@=.5\fontcharht\font`P\relax
-  \dimen\tw@=0.33333\dimen\z@
-  \ooalign{%
-    \raisebox{\dimexpr\dimen\z@+2\dimen\tw@-0.4pt}{\rule{\fontcharwd\font`P}{0.4pt}}\cr
-    \raisebox{\dimexpr\dimen\z@+\dimen\tw@-0.2pt}{\rule{\fontcharwd\font`P}{0.4pt}}\cr
-    P\cr
-  }%
-  \,\endgroup
-}
 
+
+ 
 %%NEW SUB STYLE FOR MDFRAMED
 
 \mdfdefinestyle{jremmdbox}{%
-    frametitlefont = \sffamily \bfseries \color{Black},
+    frametitlefont = \sffamily  \color{Black},
       frametitlebelowskip = 0pt,
       splittopskip = 0pt,
       innertopmargin = 5pt,
@@ -72,7 +67,7 @@
     }
 
 \mdfdefinestyle{jradduemmdbox}{%
-    frametitlefont = \sffamily \bfseries \color{Blue!65!Black},
+    frametitlefont = \sffamily  \color{Blue!65!Black},
       frametitlebelowskip = 0pt,
       splittopskip = 0pt,
       innertopmargin = 5pt,
@@ -86,7 +81,88 @@
       backgroundcolor = Blue!4!White,
       hidealllines = true,
       leftline = true,
-       font = \small, 
+       font = \normalfont, 
       leftmargin = -10pt,
       rightmargin = -10pt
     }
+    
+    \mdfdefinestyle{jryellowemmdbox}{%
+    frametitlefont = \sffamily  \color{Yellow!65!Black},
+      frametitlebelowskip = 0pt,
+      splittopskip = 0pt,
+      innertopmargin = 5pt,
+      linewidth = 3pt,
+      skipabove = 12pt,
+      skipbelow = 0pt,
+      innerleftmargin = 7pt,
+      innerrightmargin = 10pt,
+      innerbottommargin = 7pt,
+      linecolor = Yellow!60!Red,
+      backgroundcolor = Yellow!20!White,
+      hidealllines = true,
+      leftline = true,
+       font = \normalfont, 
+      leftmargin = -10pt,
+      rightmargin = -10pt
+    }
+    
+      \mdfdefinestyle{jrgreenmdbox}{%
+    frametitlefont = \sffamily  \color{Green!60!Black},
+      frametitlebelowskip = 0pt,
+      splittopskip = 0pt,
+      innertopmargin = 5pt,
+      linewidth = 3pt,
+      skipabove = 12pt,
+      skipbelow = 0pt,
+      innerleftmargin = 7pt,
+      innerrightmargin = 10pt,
+      innerbottommargin = 7pt,
+      linecolor = Green!60!Black,
+      backgroundcolor = Green!10!White,
+      hidealllines = true,
+      leftline = true,
+       font = \normalfont, 
+      leftmargin = -10pt,
+      rightmargin = -10pt
+    }
+    
+    \declaretheoremstyle[
+    spaceabove = 5pt,
+      spacebelow = 5pt,
+      headfont = \sffamily \bfseries \color{Blue!70!Black},
+      bodyfont = \normalfont,
+      mdframed = {style = jradduemmdbox}
+    ]{jrexbox}
+    
+     \declaretheoremstyle[
+     spaceabove = 5pt,
+      spacebelow = 5pt,
+      headfont = \sffamily \bfseries \color{Red!70!Yellow},
+      bodyfont = \normalfont,
+      mdframed = {style = jryellowemmdbox}
+    ]{jryellowexbox}
+    
+    \declaretheoremstyle[
+     spaceabove = 5pt,
+      spacebelow = 5pt,
+      headfont = \sffamily \bfseries \color{Green!60!Black},
+      bodyfont = \normalfont,
+      mdframed = {style = jrgreenmdbox}
+    ]{jrgreenexbox}
+
+ \declaretheorem[style=exbox,name=Lemma,sibling=exboxed]{lemboxed}
+ 
+ %%%%BLUE
+ 
+ \declaretheorem[style=jrexbox,name=Example,sibling=exboxed]{jrexboxed}
+ \declaretheorem[style=jrexbox,name=Problem,sibling=exboxed]{jrprobboxed}
+ \declaretheorem[style=jrexbox,name=Exercise,sibling=exboxed]{jrexrboxed}
+ 
+ %%%YELLOW
+   \declaretheorem[style=jryellowexbox,name=Example,sibling=exboxed]{jrexyellowboxed}
+  \declaretheorem[style=jryellowexbox,name=Exercise,sibling=exboxed]{jrexryellowboxed}
+  \declaretheorem[style=jryellowexbox,name=Problem,sibling=exboxed]{jrprobbyellowboxed}
+  
+ %%%GREEN
+   \declaretheorem[style=jrgreenexbox,name=Example,sibling=exboxed]{jrexgreenboxed}
+    \declaretheorem[style=jrgreenexbox,name=Exercise,sibling=exboxed]{jrexrgreenboxed}
