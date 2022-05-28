@@ -1,7 +1,7 @@
 %%REMINDER: This is only an 'auxiliary LaTeX package intended for my personal projects. 
 
 
-% jrobaob.sty; last update 2022-03-14 (Testing Period)
+% jrobaob.sty; last update 2022-05-28 (Testing Period)
 %
 % Copyright (c) 2022 Josh Robert Obaob
 %
@@ -12,26 +12,73 @@
 
 
 
-%%ADDITIONAL PACKAGES%%
+%% Some Important Commands %%
 
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt 
 \newcommand{\ans}[1]{{\sffamily \bfseries Answer.}\;\(\boxed{\text{#1}}\).}
 \newcommand{\ansb}[2]{{\sffamily \bfseries Answer.}\;\(\boxed{\text{(#1) #2}}\).}
 \newcommand{\sol}{{\sffamily \bfseries Solution.}\;}
 \newcommand{\soln}[1]{{\sffamily \bfseries Solution #1.}\;}
-\newcommand{\probn}[1]{{\sffamily \bfseries  \color{DarkMidnightBlue} Problem #1.}\;}
-
-\newcommand{\exn}[1]{{\sffamily \bfseries  \color{DarkMidnightBlue} Example #1.}\;}
-
-\newcommand{\exrn}[1]{{\sffamily \bfseries  \color{DarkMidnightBlue} Exercise #1.}\;}
-
 \newcommand{\back}[1]{{\sffamily \bfseries Background.}\;}
 \newenvironment{rem}%
 {\noindent \ignorespaces \small \sffamily \sansmath {\bfseries Remark.}}%
 {\ignorespacesafterend}
 
 
+%% End Credits
 
+\newcommand{\jrendcredits}{
+
+\hline 
+
+   Copyright © \joshbf{Josh Robert Obaob}, 2022
+   
+   \vspace{-2mm}
+   
+This material is free of distribution and not for sale.
+}
+
+\newcommand{\jraddushsendcredits}{
+
+\hline 
+
+   Copyright © \joshbf{Josh Robert Obaob}, 2022
+   
+   \vspace{-2mm}
+   
+   This material is free of distribution and not for sale. All replications are allowed within the premises of the Ateneo De Davao University Senior High School
+}
+
+
+
+
+
+%% A. Without citations
+
+\newcommand{\exn}[1]{{\sffamily \bfseries  \color{DarkMidnightBlue} Example #1.}\;}
+
+\newcommand{\exrn}[1]{{\sffamily \bfseries  \color{DarkMidnightBlue} Exercise #1.}\;}
+
+\newcommand{\probn}[1]{{\sffamily \bfseries  \color{DarkMidnightBlue} Problem #1.}\;}
+
+\newcommand{\thmn}[1]{{\sffamily \bfseries  \color{DarkMidnightBlue} Theorem #1.}\;}
+
+\newcommand{\lemn}[1]{{\sffamily \bfseries  \color{DarkMidnightBlue} Lemma #1.}\;}
+
+%%%  B. With citations
+
+
+\newcommand{\jrexample}[2]{{\sffamily \bfseries  \color{DarkMidnightBlue} Example #1} {(\sffamily #2).}}
+
+\newcommand{\jrexercise}[2]{{\sffamily \bfseries  \color{DarkMidnightBlue} Exercise #1} {(\sffamily #2).}}
+
+\newcommand{\jrproblem}[2]{{\sffamily \bfseries  \color{DarkMidnightBlue} Problem #1} {(\sffamily #2).}}
+
+\newcommand{\jrtheorem}[2]{{\sffamily \bfseries  \color{DarkMidnightBlue} Theorem #1} {(\sffamily #2).}}
+
+\newcommand{\jrlemma}[2]{{\sffamily \bfseries  \color{DarkMidnightBlue} Lemma #1} {(\sffamily #2).}}
+
+%% Font style commands
 
 \newcommand{\joshbluebf}[1]{{\bfseries \sffamily \color{DarkMidnightBlue} #1}}
 \newcommand{\joshbf}[1]{{\bfseries \sffamily \color{black} #1}}
@@ -51,13 +98,13 @@
   }%
   \,\endgroup
 } 
-%%%STATISTICS:
+%% Statistics:
 
 \newcommand{\phut}{\hat{p}}
 \newcommand{\qhut}{\hat{q}}
 \newcommand{\xscore}{\overline{X}}
 
-%%ADDITIONAL STYLES FOR THMBOXED
+%% Additional commands for boxthm option; customized for JR Obaob documents
 
 
 \mdfdefinestyle{jremmdbox}{%
