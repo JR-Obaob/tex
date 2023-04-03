@@ -267,18 +267,48 @@
       \fancyfoot[R]{\thepage}
     \fi
 
-\ifjroassesspro
-      
-  \fancyhead[L]{\sffamily {\LARGE \bfseries \thetitle}\\%
-  \vspace{0.5em}{\Large \thedate} \\
-  \vspace{1em}{\theauthor}\vspace{1em}}
-  \fancyhead[R]{\fbox{\sffamily \LARGE Day: \textbf{\thepage}}\vspace{1em}}
-  \fancyfoot[R]{
-  \begin{flushright}
-  \emph{Time allocated: 1 hour}
-  \end{flushright}
+ \RequirePackage{fancyhdr}
+  \RequirePackage{titling}
+  \pagestyle{fancy}
+  \setlength{\topmargin}{2em}
+  \setlength{\oddsidemargin}{0.53in}
+  \setlength{\headheight}{9.3em}
+  \setlength{\headsep}{2em}
+  \setlength{\voffset}{-1in}
+  \setlength{\hoffset}{-0.5in}
+  \setlength{\footskip}{0.1in}
+  \newlength\FHoffset\setlength\FHoffset{0.5in}
+  \addtolength\headwidth{2\FHoffset}
+  \fancyheadoffset{\FHoffset}
+  \newlength\FHleft\setlength\FHleft{0in}
+  \newlength\FHright\setlength\FHright{-1in}
+  \newbox\FHline\setbox\FHline=\hbox{\hsize=\paperwidth%
+    \hspace*{\FHleft}%
+    \rule{\dimexpr\headwidth-\FHleft-\FHright\relax}%
+    {\headrulewidth}\hspace*{\FHright}%
   }
-   \fi
+ \chead{}
+  \lhead{\sffamily {\LARGE \bfseries \thetitle}\\%
+  
+  \vspace{0.5em}
+  
+  {\Large \thesubtitle}
+  
+  \vspace{1em}
+  
+  {\theauthor}
+  
+  \vspace{1em}
+  }
+  \rhead{\fbox{\sffamily \LARGE Day: \textbf{\thepage}}\vspace{1em}}
+  \lfoot{\begin{flushleft}
+  \emph{All rights reserved.} \end{flushleft}}
+
+  \rfoot{\begin{flushright}
+  \emph{Time allocated: 1 hour} \end{flushright}}
+\fi
+
+ 
    
 \fancypagestyle{plain} {
       \fancyhf{}
@@ -313,25 +343,7 @@
     \ofoot{\thepage}
     \fi
     
-    \ifjroassesspro
-  \chead{}
-  \lhead{\sffamily {\LARGE \bfseries \thetitle}\\%
-  
-  \vspace{0.5em}
-  
-  {\Large \thesubtitle}
-  
-  \vspace{1em}
-  
-  {\theauthor}
-  
-  \vspace{1em}
-  }
-  \rhead{\fbox{\sffamily \LARGE Day: \textbf{\thepage}}\vspace{1em}}
-  \lfoot{\begin{flushright}
-  \emph{Time allocated: 1 hour} \end{flushright}}
-    \fi 
-  }
+    
 
 \providecommand{\appendiargdef}[2]{\begingroup
      \toks@\expandafter{#1{##1}#2}%
