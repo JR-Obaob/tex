@@ -8,18 +8,10 @@
 %Permission is hereby granted, for all possible users of the Code, free of charge, and any related documentations, to deal
 % in the Code without restriction, including without limitation the rights
 % to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-% copies of the Code, and to permit persons to whom the Software is
+% copies of the Code, and to permit persons to whom the Code is
 % furnished to do so, subject to the following conditions:
 % The above copyright notice and this permission notice shall be included in all
 % copies or substantial portions of the Software.
-%
-% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-% SOFTWARE.
 %
 % (Inspired from cjquines.sty preamble)
 %
@@ -147,8 +139,8 @@
   \RequirePackage{charter}
   \pagestyle{fancy}
   \setlength{\topmargin}{2em}
-  \setlength{\oddsidemargin}{0.73in}
-  \setlength{\headheight}{9em}
+  \setlength{\oddsidemargin}{0.53in}
+  \setlength{\headheight}{2em}
   \setlength{\headsep}{2em}
   \setlength{\voffset}{-1in}
   \setlength{\hoffset}{-0.5in}
@@ -165,7 +157,7 @@
   }
   \lhead{\mailto{jrdobaob@addu.edu.ph}}
   \chead{}
-  \rhead{%\includegraphics[width=1.5in]{logo.png}
+  \rhead{\includegraphics[width=1.5in]{logo.png}
   }
   \lfoot{}
 \cfoot{\thepage}
@@ -177,12 +169,12 @@
   \RequirePackage{titling}
   \pagestyle{fancy}
   \setlength{\topmargin}{2em}
-  \setlength{\oddsidemargin}{0.73in}
-  \setlength{\headheight}{9em}
-  \setlength{\headsep}{2em}
+  \setlength{\oddsidemargin}{0.53in}
+  \setlength{\headheight}{10em}
+  \setlength{\headsep}{3em}
   \setlength{\voffset}{-1in}
   \setlength{\hoffset}{-0.5in}
-  \setlength{\footskip}{0in}
+  \setlength{\footskip}{13.59999pt}
   \newlength\FHoffset\setlength\FHoffset{0.5in}
   \addtolength\headwidth{2\FHoffset}
   \fancyheadoffset{\FHoffset}
@@ -193,13 +185,6 @@
     \rule{\dimexpr\headwidth-\FHleft-\FHright\relax}%
     {\headrulewidth}\hspace*{\FHright}%
   }
-  \cfoot{}
-  \lhead{\sffamily {\Huge \bfseries \thetitle}\\%
-  \vspace{1em}{\LARGE \theauthor}\vspace{1em}}
-  \rhead{\fbox{\sffamily \LARGE Day: \textbf{\thepage}}\vspace{1em}}
-  \cfoot{\begin{flushright}{Time limit: 4 hours 30 minutes.\\%
-  Each problem is worth 7 points.}
-  \end{flushright}}
 \fi
 
 
@@ -280,7 +265,21 @@
        }
       \fancyfoot[R]{\thepage}
     \fi
-    \fancypagestyle{plain} {
+
+\ifjroassesspro
+      
+  \fancyhead[L]{\sffamily {\LARGE \bfseries \thetitle}\\%
+  \vspace{0.5em}{\Large \thedate} \\
+  \vspace{1em}{\theauthor}\vspace{1em}}
+  \fancyhead[R]{\fbox{\sffamily \LARGE Day: \textbf{\thepage}}\vspace{1em}}
+  \fancyfoot[R]{
+  \begin{flushright}
+  \emph{Time allocated: 1 hour}
+  \end{flushright}
+  }
+   \fi
+   
+\fancypagestyle{plain} {
       \fancyhf{}
       \renewcommand{\headrulewidth}{0.0pt}
       \renewcommand{\footrulewidth}{0.0pt}
@@ -293,17 +292,42 @@
     \ohead{\includegraphics[width=1.5in]{logo.png}
        }
     \ifoot{}
-    \cfoot[]{}
+    \cfoot{}
     \ofoot{\thepage}
+    
     \ifjrowide
       \ihead{\sffamily \thetitle}
       \ohead{%\includegraphics[width=1.5in]{logo.png}
        }
       \ofoot{\thepage}
     \fi
-     \ifjrotutor
 
-     \providecommand{\appendiargdef}[2]{\begingroup
+    
+     \ifjrotutor
+    \ihead{\sffamily \thetitle}
+    \chead{}
+    \ohead{\includegraphics[width=1.5in]{logo.png}}
+    \ifoot{\small \thesubtitle}
+    \cfoot[]{}
+    \ofoot{\thepage}
+    \fi
+    
+    \ifjroassesspro
+  \chead{}
+  \lhead{\sffamily {\LARGE \bfseries \thetitle}\\%
+  \vspace{0.5em}{\Large \thedate} \\
+  \vspace{1em}{\theauthor}\vspace{1em}}
+  \rhead{\fbox{\sffamily \LARGE Day: \textbf{\thepage}}\vspace{1em}}
+  \cfoot{
+  \begin{flushright}
+  \emph{Time allocated: 1 hour}
+  \end{flushright}
+  }
+    \fi 
+  }
+
+  
+\providecommand{\appendiargdef}[2]{\begingroup
      \toks@\expandafter{#1{##1}#2}%
      \edef\@bsx{\endgroup \def\noexpand#1####1{\the\toks@}}%
      \@bsx}
@@ -315,17 +339,6 @@
      \renewcommand{\thanksgap}[1]{}
      \protected@xdef\thesubtitle{#1}
      \endgroup}
- 
-    \ihead{\sffamily \thetitle}
-    \chead{}
-    \ohead{\includegraphics[width=1.5in]{logo.png}}
-    \ifoot{\small \thesubtitle }
-    \cfoot[]{}
-    \ofoot{\thepage}
-    \fi
-  }
-\fi
-
 
 
 
@@ -549,5 +562,21 @@
   \fi
 
 \ifjroalttitle
-  \newcommand{\jrdobaobtitle}[1]{{\sffamily \bfseries \huge {#1}}}
+  \newcommand{\jrdobaobtitle}[4]{
+  \begin{center}
+  {\sffamily \bfseries \Large {#1}} %Title
+  
+  \vspace{2mm}
+  
+  {\sffamily  {#2}} %Subtitle
+
+  \vspace{2mm}
+
+  {\sffamily  {#3}} %Author
+
+  \vspace{2mm}
+
+   {\sffamily  {#4}} %Date
+  \end{center}
+  }
   \fi
