@@ -70,6 +70,7 @@
   \PassOptionsToPackage{dvipsnames}{color}
   \PassOptionsToPackage{dvipsnames}{xcolor}
   \definecolor{MidnightBlue}{RGB}{0,81,120}
+  \definecolor{SlightMidnightBlue}{RGB}{0,81,100}
   \definecolor{DarkMidnightBlue}{RGB}{0,40,60}
   \definecolor{Black}{RGB}{0,0,0}
   \definecolor{Gray}{RGB}{20,20,20}
@@ -315,18 +316,23 @@
     \ifjroassesspro
   \chead{}
   \lhead{\sffamily {\LARGE \bfseries \thetitle}\\%
-  \vspace{0.5em}{\Large \thedate} \\
-  \vspace{1em}{\theauthor}\vspace{1em}}
-  \rhead{\fbox{\sffamily \LARGE Day: \textbf{\thepage}}\vspace{1em}}
-  \cfoot{
-  \begin{flushright}
-  \emph{Time allocated: 1 hour}
-  \end{flushright}
+  
+  \vspace{0.5em}
+  
+  {\Large \thesubtitle}
+  
+  \vspace{1em}
+  
+  {\theauthor}
+  
+  \vspace{1em}
   }
+  \rhead{\fbox{\sffamily \LARGE Day: \textbf{\thepage}}\vspace{1em}}
+  \lfoot{\begin{flushright}
+  \emph{Time allocated: 1 hour} \end{flushright}}
     \fi 
   }
 
-  
 \providecommand{\appendiargdef}[2]{\begingroup
      \toks@\expandafter{#1{##1}#2}%
      \edef\@bsx{\endgroup \def\noexpand#1####1{\the\toks@}}%
@@ -423,12 +429,12 @@
       skipabove = 12pt,
       innerbottommargin = 9pt,
       skipbelow = 12pt,
-      linecolor = Gray,
+      linecolor = SlightMidnightBlue,
       nobreak = true,
     }
     
     \declaretheoremstyle[
-      headfont = \sffamily \bfseries \color{Black},
+      headfont = \sffamily \bfseries \color{SlightMidnightBlue},
       mdframed = {style=mdbox},
       headpunct = {\\[3pt]},
       postheadspace = {0pt}
