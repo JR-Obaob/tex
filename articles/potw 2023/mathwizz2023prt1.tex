@@ -155,7 +155,7 @@ Subtract the second equation from the first and you get $a^2 - b^2 = -85$. Add t
 
 \item Denote $f(x)$ as a polynomial function whereas $f(2x-1) = 8x^2 -10x +7$. Find the remainder of $f(x)$ divided by $(x-3).$
 
-\ans{$11x-14$}
+\ans{$19$}
 
 \sol Let $u = x$: $$f(2a -1) = 8a^2 - 10a + 7.$$ Next, let $x = 2a - 1 \Longleftrightarrow a = \frac{x+1}{2}$:
 
@@ -174,13 +174,13 @@ Subtract the second equation from the first and you get $a^2 - b^2 = -85$. Add t
 \end{equation*}
 
 Now rewriting $f(x)$ in terms of $x-3$ gives us $$f(x) =
-2(x-3)^2 + 11x - 14.$$ Therefore, the remainder of $f(x)$ is \fbox{$11x -14.$}
+2(x-3)^2 + 11x - 14 \Longleftrightarrow [2(x-3)^2 ]+ [11(x-3) + 19] $$ Therefore, the remainder of $f(x)$ is \fbox{$19.$}
 
 \item Determine the value of $\left(1 - \dfrac{1}{2^2}\right)\left(1 - \dfrac{1}{3^2}\right)\left(1 - \dfrac{1}{4^2}\right)\ldots\left(1 - \dfrac{1}{2022^2}\right)\left(1 - \dfrac{1}{2023^2}\right)$
 
-\ans{$1012$}
+\ans{$1012/2023$}
 
-\sol Evaluate every term and we have:
+\soln1 Evaluate every term and we have:
 
 \begin{equation*}
     \begin{array}{rcl}
@@ -192,22 +192,26 @@ Now rewriting $f(x)$ in terms of $x-3$ gives us $$f(x) =
     \end{array}
 \end{equation*}
 
-This is similar to the expression: $\dfrac{(1 \times 2 \times 3 \times \ldots \times 2023)(1 \times 2 \times 3 \times \ldots \times 2024)}{(1\times 2\times 3 \times \ldots \times 2022 \times 2023)^2} = \dfrac{2023! 2024!}{(2023!)^2}$
+This is similar to the expression: $\dfrac{(1 \times 2 \times 3 \times \ldots \times 2022)(1 \times 2 \times 3 \times \ldots 2023 \times 2024)}{(1\times 2\times 3 \times \ldots \times 2022 \times 2023)^2} = \dfrac{2022! 2024!}{(2023!)^2}$
 
 So, $N$ is just 
 
 \begin{equation*}
     \begin{array}{rcl}
 
-         N & = & \dfrac{\dfrac{2023!2024!}{2023!2023!}}{2}\\
+         N & = & \dfrac{\dfrac{2022!2024!}{2023!2023!}}{2}\\
 
-         &=& \\
+         && \\
 
-          N & = & \dfrac{2024}{2}\\
+          N & = & \dfrac{2024}{2(2023)}\\
 
-          & = & \fbox{1012}\\
+          & = & \boxed{\dfrac{1012}{2023}}\\
     \end{array}
 \end{equation*}
+
+\soln2 The expression can be rewritten as $$\left[\left(\dfrac{3}{2}\right)\left(\dfrac{4}{3}\right)\ldots\left(\dfrac{2023}{2022}\right)\left(\dfrac{2024}{2023}\right)\right] \ldots \left[\left(\dfrac{1}{2}\right)\left(\dfrac{2}{3}\right)\ldots\left(\dfrac{2021}{2022}\right)\left(\dfrac{2022}{2023}\right)\right]$$ which is equal to $$\dfrac{2024!}{2(2023!)} \times \dfrac{2022!}{2023!} = \boxed{\dfrac{1012}{2023}}$$
+
+
 \end{enumerate}
 
 \emph{Special thanks to Engr. Isaiah James Maling for posting the problems of the contest in his \href{https://www.facebook.com/photo/?fbid=193779303389619&set=pb.100082726513011.-2207520000.}{Facebook page}!} \footnote{Link to the problems: \url{https://www.facebook.com/photo/?fbid=193779303389619&set=pb.100082726513011.-2207520000.}}
