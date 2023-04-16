@@ -1,6 +1,7 @@
 %jrdobaob.sty
 %
 % Copyright (c) 2023 Josh Robert Obaob
+% Last Update: 16. 04. 2023
 %
 % The following package shall be called "The Code" for the following statements below:
 %
@@ -29,11 +30,13 @@
 \newif\ifjroassesspro\jroassessprofalse
 \newif\ifjroalttitle\jroalttitlefalse
 \newif\ifjroboxthm\jroboxthmfalse
+\newif\ifjroboxthmextra\jroboxthmextrafalse
 
 \DeclareOption{noimport}{\jroimporttrue}
 \DeclareOption{nodefault}{\jronodefaulttrue}
 \DeclareOption{nounicode}{\jronounicodetrue}
 \DeclareOption{boxthm}{\jroboxthmtrue}
+\DeclareOption{boxthmextra}{\jroboxthmextratrue}
 \DeclareOption{wide}{\jrowidetrue}
 \DeclareOption{thin}{\jrothintrue}
 
@@ -73,7 +76,7 @@
   \definecolor{SlightMidnightBlue}{RGB}{0,81,100}
   \definecolor{DarkMidnightBlue}{RGB}{0,40,60}
   \definecolor{Black}{RGB}{0,0,0}
-  \definecolor{Gray}{RGB}{20,20,20}
+  \definecolor{Gray}{RGB}{15,20,20}
   \RequirePackage[colorlinks=true, allcolors=DarkMidnightBlue]{hyperref}
 
 
@@ -284,12 +287,12 @@
     \fancyhead{}
     \fancyfoot[R]{\thepage}
     \fancyhead[L]{\sffamily \thetitle}
-    \fancyhead[R]{%\includegraphics[width=1.5in]{logo.png}
+    \fancyhead[R]{\includegraphics[width=1.5in]{logo.png}
     }
     \fancyfoot[R]{}
     \ifjrowide
       \fancyhead[L]{\sffamily \thetitle}
-       \fancyhead[R]{%\includegraphics[width=1.5in]{logo.png}
+       \fancyhead[R]{\includegraphics[width=1.5in]{logo.png}
        }
       \fancyfoot[R]{\thepage}
     \fi
@@ -325,7 +328,7 @@
     
     \ifjrowide
       \ihead{\sffamily \thetitle}
-      \ohead{%\includegraphics[width=1.5in]{logo.png}
+      \ohead{\includegraphics[width=1.5in]{logo.png}
        }
       \ofoot{\thepage}
     \fi
@@ -372,14 +375,15 @@
 
   \ifjroboxthm
     \mdfdefinestyle{mdbox}{%
+      frametitlefont = \sffamily \bfseries \color{Gray},
       linewidth = 3pt,
       skipabove = 12pt,
       skipbelow = 0pt,
       innerleftmargin = 7pt,
       innerrightmargin = 10pt,
       innerbottommargin = 7pt,
-      linecolor = Gray,
-      backgroundcolor = Gray!5,
+      linecolor = Gray!65,
+      backgroundcolor = Gray!7,
       hidealllines = true,
       leftline = true,
       leftmargin = -10pt,
@@ -425,7 +429,9 @@
     \declaretheorem[style=exbox,name=Problem,sibling=exboxed]{probboxed}
     \declaretheorem[style=exbox,name=Theorem,sibling=exboxed]{thmboxed}
     \declaretheorem[style=exbox,name=Remark,sibling=exboxed]{remboxed}
-
+    \declaretheorem[style=exbox,name=Lemma]{lemboxed}
+    \declaretheorem[style=exbox,name=Conjecture]{conjboxed}
+    
     \theoremstyle{definition}
 
     \declaretheorem[style=thmm,name=Problem,sibling=exboxed]{problem}
@@ -433,8 +439,10 @@
     \declaretheorem[style=thmm,name=Question,sibling=exboxed]{question}
     \declaretheorem[style=thmm,name=Theorem,sibling=exboxed]{theorem}
 
-    \mdfdefinestyle{jremmdbox}{%
-    frametitlefont = \sffamily \bfseries \color{ black!56!blue},
+    \ifjroboxthmextra
+
+   \mdfdefinestyle{jrbluemdbox}{%
+      frametitlefont = \sffamily  \color{blue!55!black},
       frametitlebelowskip = 0pt,
       splittopskip = 0pt,
       innertopmargin = 5pt,
@@ -444,8 +452,8 @@
       innerleftmargin = 7pt,
       innerrightmargin = 10pt,
       innerbottommargin = 7pt,
-      linecolor = black!56!blue,
-      backgroundcolor = black!4!white,
+      linecolor = blue!55!black,
+      backgroundcolor = blue!7!white,
       hidealllines = true,
       leftline = true,
        font = \normalfont, 
@@ -453,28 +461,9 @@
       rightmargin = -10pt
     }
 
-\mdfdefinestyle{jradduemmdbox}{%
-    frametitlefont = \sffamily  \color{blue!65!black},
-      frametitlebelowskip = 0pt,
-      splittopskip = 0pt,
-      innertopmargin = 5pt,
-      linewidth = 3pt,
-      skipabove = 12pt,
-      skipbelow = 0pt,
-      innerleftmargin = 7pt,
-      innerrightmargin = 10pt,
-      innerbottommargin = 7pt,
-      linecolor = blue!70!black,
-      backgroundcolor = blue!4!white,
-      hidealllines = true,
-      leftline = true,
-       font = \normalfont, 
-      leftmargin = -10pt,
-      rightmargin = -10pt
-    }
     
-    \mdfdefinestyle{jryellowemmdbox}{%
-    frametitlefont = \sffamily  \bfseries \color{red!70!yellow},
+    \mdfdefinestyle{jryellowmdbox}{%
+      frametitlefont = \sffamily  \bfseries \color{red!70!yellow},
       frametitlebelowskip = 0pt,
       splittopskip = 0pt,
       innertopmargin = 5pt,
@@ -494,7 +483,7 @@
     }
     
       \mdfdefinestyle{jrgreenmdbox}{%
-    frametitlefont = \sffamily  \bfseries \color{green!60!black},
+      frametitlefont = \sffamily  \bfseries \color{green!60!black},
       frametitlebelowskip = 0pt,
       splittopskip = 0pt,
       innertopmargin = 5pt,
@@ -513,7 +502,7 @@
       rightmargin = -10pt
     }
      \mdfdefinestyle{jrredmdbox}{%
-    frametitlefont = \sffamily  \color{red!60!black},
+      frametitlefont = \sffamily  \color{red!60!black},
       frametitlebelowskip = 0pt,
       splittopskip = 0pt,
       innertopmargin = 5pt,
@@ -523,8 +512,8 @@
       innerleftmargin = 7pt,
       innerrightmargin = 10pt,
       innerbottommargin = 7pt,
-      linecolor = Red!60!Black,
-      backgroundcolor = Red!10!White,
+      linecolor = red!60!black,
+      backgroundcolor = red!10!white,
       hidealllines = true,
       leftline = true,
        font = \normalfont, 
@@ -533,20 +522,29 @@
     }
 
       \declaretheoremstyle[
-    spaceabove = 5pt,
+      spaceabove = 5pt,
       spacebelow = 5pt,
       headfont = \sffamily \bfseries \color{blue!70!black},
       bodyfont = \normalfont,
-      mdframed = {style = jradduemmdbox}
+      mdframed = {style = jrbluemdbox}
     ]{jrexbox}
+
+    \declaretheorem[style=jrexbox,name=Example]{jrexboxed}
+    \declaretheorem[style=jrexbox,name=Problem,sibling=exboxed]{jrprobboxed}
+    \declaretheorem[style=jrexbox,name=Exercise,sibling=exboxed]{jrexrboxed}
+    \declaretheorem[style=jrexbox,name=Definition]{jrdefboxed}
     
      \declaretheoremstyle[
      spaceabove = 5pt,
       spacebelow = 5pt,
       headfont = \sffamily \bfseries \color{red!70!yellow},
       bodyfont = \normalfont,
-      mdframed = {style = jryellowemmdbox}
+      mdframed = {style = jryellowemdbox}
     ]{jryellowexbox}
+
+     \declaretheorem[style=jryellowexbox,name=Example]{jrexyellowboxed}
+     \declaretheorem[style=jryellowexbox,name=Exercise,sibling=exboxed]{jrexryellowboxed}
+     \declaretheorem[style=jryellowexbox,name=Problem,sibling=exboxed]{jrprobbyellowboxed}
     
     \declaretheoremstyle[
      spaceabove = 5pt,
@@ -555,43 +553,25 @@
       bodyfont = \normalfont,
       mdframed = {style = jrgreenmdbox}
     ]{jrgreenexbox}
+
+    \declaretheorem[style=jrgreenexbox,name=Example]{jrexgreenboxed}
+    \declaretheorem[style=jrgreenexbox,name=Exercise,sibling=exboxed]{jrexrgreenboxed}
+    \declaretheorem[style=jrgreenexbox,name=Problem,sibling=exboxed]{jrprobgreenboxed}
     
      \declaretheoremstyle[
      spaceabove = 5pt,
       spacebelow = 5pt,
-      headfont = \sffamily \bfseries \color{green!60!black},
+      headfont = \sffamily \bfseries \color{red!60!black},
       bodyfont = \normalfont,
       mdframed = {style = jrredmdbox}
     ]{jrredexbox}
-
-
-    %%Additional thmboxed
- \declaretheorem[style=exbox,name=Lemma]{lemboxed}
-  \declaretheorem[style=exbox,name=Conjecture]{conjboxed}
-   \declaretheorem[style=jrexbox,name=Theorem]{jrthmboxed}
-   
- %%%%BLUE
- 
- \declaretheorem[style=jrexbox,name=Example]{jrexboxed}
- \declaretheorem[style=jrexbox,name=Problem,sibling=exboxed]{jrprobboxed}
- \declaretheorem[style=jrexbox,name=Exercise,sibling=exboxed]{jrexrboxed}
- 
- 
- %%%YELLOW
-   \declaretheorem[style=jryellowexbox,name=Example]{jrexyellowboxed}
-  \declaretheorem[style=jryellowexbox,name=Exercise,sibling=exboxed]{jrexryellowboxed}
-  \declaretheorem[style=jryellowexbox,name=Problem,sibling=exboxed]{jrprobbyellowboxed}
-  
- %%%GREEN
-   \declaretheorem[style=jrgreenexbox,name=Example]{jrexgreenboxed}
-    \declaretheorem[style=jrgreenexbox,name=Exercise,sibling=exboxed]{jrexrgreenboxed}
-    \declaretheorem[style=jrgreenexbox,name=Problem,sibling=exboxed]{jrprobgreenboxed}
-    
-%%%RED
     
     \declaretheorem[style=jrredexbox,name=Example]{jrexredboxed}
     \declaretheorem[style=jrredexbox,name=Exercise,sibling=exboxed]{jrexrredboxed}
     \declaretheorem[style=jrredexbox,name=Problem,sibling=exboxed]{jrprobredboxed}
+
+     \fi
+     
   \else
   
     \mdfdefinestyle{mdbox}{%
