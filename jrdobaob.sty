@@ -1,7 +1,7 @@
 %jrdobaob.sty
 %
 % Copyright (c) 2023 Josh Robert Obaob
-% Last Update: 16. 04. 2023
+% Last Update: 28. 04. 2023
 %
 % The following package shall be called "The Code" for the following statements below:
 %
@@ -231,9 +231,6 @@
   \ifjrowide
     \pretitle{\begin{center} \bfseries \sffamily \LARGE}
   \fi
-  \ifjroqhv
-    \pretitle{\vspace{-6em} \begin{center} \bfseries \sffamily \Large}
-  \fi
   \posttitle{\vspace{-3pt} \end{center}}
   \renewcommand{\subtitle}[1]{%
     \posttitle{%
@@ -429,8 +426,8 @@
     \declaretheorem[style=exbox,name=Problem,sibling=exboxed]{probboxed}
     \declaretheorem[style=exbox,name=Theorem,sibling=exboxed]{thmboxed}
     \declaretheorem[style=exbox,name=Remark,sibling=exboxed]{remboxed}
-    \declaretheorem[style=exbox,name=Lemma]{lemboxed}
-    \declaretheorem[style=exbox,name=Conjecture]{conjboxed}
+    \declaretheorem[style=exbox,name=Lemma,sibling=exboxed]{lemboxed}
+    \declaretheorem[style=exbox,name=Conjecture,sibling=exboxed]{conjboxed}
     
     \theoremstyle{definition}
 
@@ -524,7 +521,7 @@
       \declaretheoremstyle[
       spaceabove = 5pt,
       spacebelow = 5pt,
-      headfont = \sffamily \bfseries \color{blue!70!black},
+      headfont = \sffamily \bfseries \color{blue!55!black},
       bodyfont = \normalfont,
       mdframed = {style = jrbluemdbox}
     ]{jrexbox}
@@ -580,12 +577,13 @@
       skipabove = 12pt,
       innerbottommargin = 9pt,
       skipbelow = 12pt,
-      linecolor = SlightMidnightBlue,
+      linecolor = MidnightBlue,
+      backgroundcolor = white!90!SlightMidnightBlue,
       nobreak = true,
     }
     
     \declaretheoremstyle[
-      headfont = \sffamily \bfseries \color{SlightMidnightBlue},
+      headfont = \sffamily \bfseries \color{MidnightBlue},
       mdframed = {style=mdbox},
       headpunct = {\\[3pt]},
       postheadspace = {0pt}
@@ -599,7 +597,36 @@
     \declaretheorem[style=thmbox,name=Lemma,numbered=no]{lemma*}
     \declaretheorem[style=thmbox,name=Corollary,numbered=no]{corollary*}
     \declaretheorem[style=thmbox,name=Proposition,numbered=no]{proposition*}
+
+
+ \mdfdefinestyle{2mdbox}{%
+      roundcorner = 2pt,
+      linewidth = 1pt,
+      skipabove = 12pt,
+      innerbottommargin = 9pt,
+      skipbelow = 12pt,
+      linecolor = Black!80,
+      nobreak = true,
+    }
     
+    \declaretheoremstyle[
+      headfont = \sffamily \bfseries \color{Black!80},
+      mdframed = {style=2mdbox},
+      headpunct = {\\[3pt]},
+      postheadspace = {0pt}
+    ]{2thmbox}
+    
+    \declaretheorem[style=2thmbox,name=Theorem,sibling=theorem]{2theorem}
+    \declaretheorem[style=2thmbox,name=Lemma,sibling=2theorem]{2lemma}
+    \declaretheorem[style=2thmbox,name=Corollary,sibling=2theorem]{2corollary}
+    \declaretheorem[style=2thmbox,name=Proposition,sibling=2theorem]{2proposition}
+    \declaretheorem[style=2thmbox,name=Theorem,numbered=no]{2theorem*}
+    \declaretheorem[style=2thmbox,name=Lemma,numbered=no]{2lemma*}
+    \declaretheorem[style=2thmbox,name=Corollary,numbered=no]{2corollary*}
+    \declaretheorem[style=2thmbox,name=Proposition,numbered=no]{2proposition*}
+
+
+ 
     \theoremstyle{definition}
     
     \newtheorem{answer}[theorem]{Answer}
