@@ -1,7 +1,7 @@
 %jrdobaob.sty
 %
 % Copyright (c) 2023 Josh Robert Obaob
-% Last Update: 02. 05. 2023
+% Last Update: 14. 05. 2023
 %
 % The following package shall be called "The Code" for the following statements below:
 %
@@ -23,6 +23,7 @@
 \newif\ifjronodefault\jronodefaultfalse
 \newif\ifjronounicode\jronounicodefalse
 \newif\ifjroqhv\jroqhvfalse
+\newif\ifjroppl\jropplfalse
 \newif\ifjrowide\jrowidefalse
 \newif\ifjrothin\jrothinfalse
 \newif\ifjrotutor\jrotutorfalse
@@ -40,6 +41,7 @@
 \DeclareOption{wide}{\jrowidetrue}
 \DeclareOption{thin}{\jrothintrue}
 
+\DeclareOption{ppl}{\jroppltrue}
 \DeclareOption{qhv}{\jroqhvtrue}
 \DeclareOption{tutor}{\jrotutortrue}
 \DeclareOption{alttitle}{\jroalttitletrue}
@@ -92,7 +94,12 @@
 
 \RequirePackage[bitstream-charter]{mathdesign}
 \RequirePackage[T1]{fontenc}
+\fi
 
+\ifjroppl
+
+\RequirePackage[T1]{fontenc}
+\usepackage{palatino}
 
 \fi 
 
@@ -117,7 +124,7 @@
   }
   \setlength{\voffset}{-1.0in}
   \setlength{\hoffset}{-1.0in}
-  \setlength{\headheight}{15pt}
+  \setlength{\headheight}{18.68193pt}
   \setlength{\headsep}{15pt}
 
   \setlength{\evensidemargin}{1in}
@@ -228,7 +235,7 @@
 
 \else
   \RequirePackage{titling}
-  \pretitle{\vspace{-5em} \begin{center}  \bfseries \sffamily \LARGE}
+  \pretitle{\vspace{-5em} \begin{center} \sffamily  \bfseries \LARGE}
   \ifjrowide
     \pretitle{\begin{center} \bfseries \sffamily \LARGE}
   \fi
@@ -285,13 +292,11 @@
     \fancyhead{}
     \fancyfoot[R]{\thepage}
     \fancyhead[L]{\sffamily \thetitle}
-    \fancyhead[R]{\includegraphics[width=1.5in]{logo.png}
-    }
+    \fancyhead[R]{\theauthor}
     \fancyfoot[R]{}
     \ifjrowide
       \fancyhead[L]{\sffamily \thetitle}
-       \fancyhead[R]{\includegraphics[width=1.5in]{logo.png}
-       }
+       \fancyhead[R]{\theauthor}
       \fancyfoot[R]{\thepage}
     \fi
 
@@ -318,16 +323,14 @@
     \renewcommand{\headfont}{}
     \ihead{\sffamily \thetitle}
     \chead{}
-    \ohead{\includegraphics[width=1.5in]{logo.png}
-       }
+    \ohead{\theauthor}
     \ifoot{}
     \cfoot{}
     \ofoot{\thepage}
     
     \ifjrowide
       \ihead{\sffamily \thetitle}
-      \ohead{\includegraphics[width=1.5in]{logo.png}
-       }
+      \ohead{\theauthor}
       \ofoot{\thepage}
     \fi
 
@@ -335,7 +338,7 @@
      \ifjrotutor
     \ihead{\sffamily \thetitle}
     \chead{}
-    \ohead{\includegraphics[width=1.5in]{logo.png}}
+    \ohead{\theauthor}
     \ifoot{\small \thesubtitle}
     \cfoot[]{}
     \ofoot{\thepage}
@@ -522,7 +525,7 @@
       \declaretheoremstyle[
       spaceabove = 5pt,
       spacebelow = 5pt,
-      headfont = \sffamily \bfseries \color{blue!55!black},
+      headfont = \sffamily \bfseries \color{DarkMidnightBlue},
       bodyfont = \normalfont,
       mdframed = {style = jrbluemdbox}
     ]{jrexbox}
