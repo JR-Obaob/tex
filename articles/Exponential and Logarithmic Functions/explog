@@ -1,0 +1,673 @@
+\documentclass[11pt,paper={letter}]{scrartcl}
+\usepackage{jrdobaob}
+\usepackage{float}
+
+
+\begin{document}
+
+\title{Exponential \& Logarithmic functions}
+\subtitle{$\ldots$ but it is not what you thought \\ {\scshape Mathematical Olympiad Series} (2023 Edition)}
+\author{\includegraphics[width=1.5in]{logo.png}}
+
+\maketitle
+
+
+The following article in this module is inspired from one of my lessons during the \textbf{2020 Young Mathematicians' In--House Intensive Training Program} (or YMIITP in short) of the {\scshape Mathematics Trainers' Guild, Philippines}. In this lesson, we are going to explore the Olympiad side of \textbf{exponential and logarithmic functions}. 
+
+\
+
+In case you don't know, YMIITP is, perhaps, the hardest stage that a trainee of MTG kid could ever faced due to its short time given to a trainee to absorb and understand rigorous Olympiad lessons in just 4-5 days with 2 sessions per day with quizzes.
+However, in the context of online modality, it almost resembled the original model except it is held online and is held within a week with final examinations at the end of the program and these examinations are used as parameters by the trainers whenever you are qualified for the MTG's final stage, \textbf{Mathematical Olympiad Summer Training Program}! \footnote{For more details about the program, visit \url{http://www.mtgphil.org/index.php?mod=about&id=4}.}
+
+\subsubsection*{Recap of my experience about 2020 YMIITP}
+
+Among all the lessons that encountered in the training program 3 years ago, it is the lesson of logarithms that really stumped me. Yes, you heard it right. It is indeed the \textbf{exponential and logarithmic functions} that gave me a hard time because I had never encountered logarithms before. However, 3 years later, here comes the irony and that is making the \textit{almost-exact} same thing that stumped me but thank God, I have mastered it! Before you read the article, here is a table of contents for easier navigation! 
+
+
+
+\tableofcontents
+
+\newpage 
+
+\section{Definitions and properties (recap)}
+
+
+The function $f(x) = a^x$, where $a$ is a positive constant, is called \textbf{an exponential function}. We say a function $f$ is a \textit{monotonically increasing function} $f(x) > f(y)$ if $x>y$. If $a>1$, then $f(x)$ is monotonically increasing function.
+
+
+
+For the inverse, the function $x = \log_a b$, whereas $a,b$ are positive real numbers and $a \neq 1,$ is called \textbf{an logarithmic function.} In this case, $a$ is the base of the logarithm and $b = f(x) = a^x.$ 
+
+\begin{2theorem}[Laws of Exponents \& Logarithms]
+Here are the following properties of exponents and logarithms:
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item[$\quad$] 
+\begin{minipage}{2cm}
+\begin{equation*}
+        \begin{array}{rcl}
+        & & \\
+             a^0 & = & 1 \quad \text{\footnotesize (for all $a \neq 0.$)} \\
+
+             && \\
+              0^b & = & 0 \quad \text{(\footnotesize for all $b \neq 0.$)} \\
+              
+             && \\
+             
+              a^{-p} &=& \dfrac{1}{a^p} \quad \text{\footnotesize (for all $a \neq 0$)} \\
+              
+             && \\
+
+              a^p \cdot a^q &=& a^{p+q} \\
+
+                 && \\
+
+              (a^p)^q &=& a^{pq}  \\
+
+              && \\
+
+              (a \cdot b)^q &=& a^{q} \cdot b^{q} \\
+
+              && \\
+
+              a^{b/c} &=& \sqrt[c]{a^b}\quad \text{ \footnotesize (for all $a, b, c \neq 0$, $b \in \ZZ$ , 
+$c \in \ZZ^+$.)  } \\
+        \end{array}
+    \end{equation*}
+    \end{minipage}
+    
+    \item[$\quad$] 
+    \begin{equation*}
+    \begin{array}{rcl}
+       \log_a {a^p}  & = & p\\
+       \\
+         \log_a {b^c}  & = & c \log_a b\\
+         \\
+         
+          \log_{a}{b} + \log_{a}{c}  & = &  \log_a bc\\
+           \\
+          \log_{a}{b} - \log_{a}{c}  & = &  \log_a \left(\dfrac{b}{c}\right)\\
+           \\
+          
+          \dfrac{\log_{a}{b}}{\log_{a}{c}}  & = &  \log_c b\\
+          
+          \\
+
+          (\log_{a}{b}) (\log_{b}{c})  & = &  \log_b c\\
+           \\
+           
+           \log_{a^n} {b^n}  & = &  \log_a b\\
+          \\
+          a^{\log_{a}{x}}  & = &  x\\
+    \end{array}
+\end{equation*}
+
+\end{enumerate}
+\end{multicols}
+
+
+\end{2theorem}
+
+
+\subsection{Special case: Natural logarithm}
+
+There is a special logarithm called \textbf{natural logarithm} or in symbols, $\ln x.$ Take note that $$x = \ln b = \log_e b.$$ Now you may ask me what is this special constant $e$ is. This is the inverse of the \textbf{exponential function} with base $e$: $$e^x =  b$$.
+
+\vspace{2mm}
+
+The special constant $e$ is equal to $\displaystyle{\lim_{n\rightarrow \infty}}\left(1 + \frac{1}{n}\right)^n$, or in other words, is equal to that the expression $(1 + \frac{1}{n})^n$ approaches when $n$ is approaching a larger value. This constant appears in a lot of scientific and mathematical contexts and one of the examples that this constant is used for the study of radioactive decay.  
+If the half-life of a substance is $t_{1/2}$ , and there is initially $N_0$ of the substance, then the
+amount remaining after a time $t$ is given by the function:
+
+\begin{equation*}
+    f(t) =  N_0\left(\dfrac{1}{2}\right)^{t/t_{1/2}}
+\end{equation*}
+
+\section{Common mistakes about logarithms}
+
+There are common mistakes on using logarithms:
+
+\begin{equation*}
+    \begin{array}{rcl}
+         \log_b x + \log_b y& =  &\log_b (x+y) \\
+         \\
+        \dfrac{\log_b x}{\log_b y} &= & \log_b \dfrac{x}{y} \\ 
+        \\
+        {\log_b x} \ {\log_b y} &= & \log_b {x}{y} \\ 
+    \end{array}
+\end{equation*}
+
+\section{Beware!}
+
+\begin{enumerate}
+    \item Perform algebraic manipulations religiously. Think about each step and make sure you know why 
+it is valid.
+
+\item Using graphs are strategic tools for providing intuition about a problem. However but they should \textbf{not} be used as a key part of a proof or a rigorous solution to a problem.
+\item  When working with equations involving exponential/logarithmic expressions, watch out for special cases in which 
+$−1,0,$ or $1$ is the base.
+
+\item The logarithms in our sum and difference identities must have the same base. For instance, you cannot add nor subtract the terms $\log_7 8$ and $\log_9 10$.
+
+\item When you solve a logarithmic equation, be sober-minded about extraneous solutions. To avoid these as much as possible, check your solutions if the equation is satisfied.
+
+\item Formulas, particularly those involving logarithms, can be written in many different forms.
+\end{enumerate}
+
+
+
+At this point, I cannot give you some problem-solving strategies for each person is unique enough to have their own strategies. However, there are two common problem-solving strategies that I think most of us agree: (1) having wishful thinking and (2) keep ourselves curious about the problem and beyond!
+
+The following solutions that I am going to show below are not \textit{the solutions} but only a fraction of the total solutions of each problem.
+
+\section{Solved examples}
+
+\subsubsection*{Warmup}
+\begin{enumerate}
+    \item Solve for $x$ in the following equation ${6^{2x}} = {6^{1 - 3x}}.$
+
+    \ans{$1/5$}
+    
+    \sol This is an easy question to start with. Since both sides of the equation have the same base, then $2x = 1-3x$. Therefore, $\boxed{x=1/5.}$
+
+    \item {\sffamily (\href{https://www.youtube.com/watch?v=RLz7LaHTLdg}{Cambridge Interview Question: Which is Larger?})} Which is larger: $\sqrt{2}$ or $\sqrt[3]{3}$?
+
+\ans{${\sqrt[3]{3}}$}
+
+\sol Note that $\sqrt{2} = 2^{\frac{3}{6}} = (2^3)^{1/6}$ and $\sqrt[3]{3} = 3^{\frac{2}{6}} = (3^2)^{1/6}.$ Now comparing the two numbers: $$(2^3)^{1/6} \quad \underline{?} \quad (3^2)^{1/6}.$$ You can really see that $\sqrt{2} < \sqrt[3]{3}$ because $2^3 < 3^2.$ Therefore, $\boxed{\sqrt[3]{3}}$ is larger!
+    \item Compare the magnitude of $x$ and $y$.
+
+    \begin{enumerate}
+        \item[(a)] $x=\sqrt{53}-5\sqrt{2}$, $y=\sqrt{83}-2\sqrt{5}$
+
+        \ans{$x<y$}
+
+        \sol $x$ can be rewritten as $\sqrt{53} - \sqrt{50}$ while $y$ as $\sqrt{83} - \sqrt{20}$. This is easy to compare since $x > \sqrt{81} -\sqrt{16} = 5$ while $1 > y > 0.$ So, \fbox{$x<y$}
+        \item[(b)] $x=\sqrt{55}-5\sqrt{5}$, $y=3\sqrt{5}-\sqrt{35}$ 
+
+        \ans{$y>x$}
+
+        \sol Doing the same method, $x = \sqrt{55} - \sqrt{125}$ while $y = \sqrt{45} - \sqrt{35}.$ Therefore, we observe that $y>x$.
+    \end{enumerate}
+    
+  
+    \item Let $2^{2x} -7 \cdot 2^x -2^3 = 0.$ What is the value of $x$?
+
+   \ans{$3$}
+
+   \sol Let $2^x = a$. Then, we have $$a^2 -7a - 8 = (a-8)(a+1) = 0.$$ At this point, we see that either $2^x = 8$ or $2^x = -1$. For the first equation, we see that $2^x = 8 = 2^3$. Hence, $x=3$. 
+
+   As for the second equation, there is no value for $x$ because if you take the logarithm base 2 both sides: $$\implies \log_2 (2^x) = \log_2(-1),$$ the right hand side violates the rule because the input within it is a negative real number. Therefore, there can be no solution for $x$ in that case.
+
+   Hence, the value for $x$ is $\boxed{3}.$
+
+    \item Let $2^{0.6} = 1.516$ and $2^{0.03} = 1.021.$ Find the values of $2^{1.63}$ and $2^{-0.37}.$
+
+    \ans{$2^{1.63} \approx {3.096}$ and $2^{-0.37} \approx 0.774$}
+    
+    \sol We see that $2^{1.63} = 2^{1+0.6+0.03}$ and $2^{-0.37} = 2^{1.63 - 2}$. For the first number, we have $$2^{1.63} = 2 \times 1.516 \times 1.021 = 3.095672 \approx \boxed{3.096}.$$ For the second number, $$2^{-0.37} = \dfrac{2^{1.63}}{2^2}=\dfrac{3.095672}{4} = 0.773918 \approx \boxed{0.774}$$
+    \item Let ${\left(1 + \frac{1}{2} + \frac{1}{4}\right)}{\left(1 + \frac{1}{3} + \frac{1}{9}\right)}\ldots{\left(1 + \frac{1}{100} + \frac{1}{10000}\right)} = n.$ Express ${\left(1 - \frac{1}{2^3}\right)}{\left(1 - \frac{1}{3^3}\right)}\ldots{\left(1 - \frac{1}{100^3}\right)}$ in terms of $n$. 
+
+    \ans{$\frac{n}{100}$}
+
+    \sol Notice that each term of $n$ is written in a form of $1 + 1(\frac{1}{k}) + \frac{1}{k^2} = (a^2 + ab +b^2)$ for all integers $a,b, k$ in which it is a factor of a well known identity: $$(a^3 - b^3) = (a-b)(a^2+ab+b^2).$$ Notice that if we are going to multiply $n$ with $(1-1/2)(1 - 1/3)\ldots(1-1/100)$ then you have 
+    
+    \begin{equation*}
+        \begin{array}{rcl}
+            {\left(1 - \frac{1}{2}\right)\left(1 + \frac{1}{2} + \frac{1}{4}\right)}{\left(1 - \frac{1}{3}\right)\left(1 + \frac{1}{3} + \frac{1}{9}\right)}\ldots{\left(1 - \frac{1}{100}\right)\left(1 + \frac{1}{100} + \frac{1}{10000}\right)} & = &  {\left(1 - \frac{1}{2}\right)}{\left(1 - \frac{1}{3}\right)}\ldots{\left(1 - \frac{1}{100}\right)n}\\
+
+            && \\
+              {\left(1 - \frac{1}{2^3}\right)}{\left(1 - \frac{1}{3^3}\right)}\ldots{\left(1 - \frac{1}{100^3}\right)} & = & {\left(\frac{1}{2} \cdot\frac{2}{3}\ldots\frac{99}{100} \right)}n \\
+
+                && \\
+                 {\left(1 - \frac{1}{2^3}\right)}{\left(1 - \frac{1}{3^3}\right)}\ldots{\left(1 - \frac{1}{100^3}\right)} & = & \frac{1}{100} \cdot n \\
+        \end{array}
+    \end{equation*} Therefore, the answer is \fbox{$\dfrac{n}{100}$.}
+
+
+\end{enumerate}
+
+
+\subsubsection*{Intermediate}
+\begin{enumerate}[resume]
+    \item Solve for $x$: $\log \sqrt{x-21} + \dfrac{1}{2}\log x = 1.$
+
+\ans{25}
+
+ \sol WIthout loss of generality, $x> 20$. Note that the equation can be rewritten in the following: $$\dfrac{1}{2}\log (x-21) + \dfrac{1}{2}\log x = 1.$$ Multiply both sides by 2, we have $$\log (x-21)+\log x = 2 \Longleftrightarrow \log (x^2 - 21x) = 2.$$ Furthermore, $$\log (x^2 -21x) = \log 100 \Longleftrightarrow x^2 - 21x - 100 = 0.$$ Factoring the left-hand side out, $$(x-25)(x+4) = 0.$$ Since, $x > 20$, then \fbox{$x=25.$}
+
+\item{\sffamily (\href{http://pmo.ph/wp-content/uploads/2019/11/PMO-22-Qualifying-Round-with-answers.pdf}{2019 PMO Q.11})} Let $x$ and $y$ be positive real numbers such that
+
+$$
+\log _{x} 64+\log _{y^{2}} 16=\frac{5}{3} \quad \text { and } \quad \log _{y} 64+\log _{x^{2}} 16=1 .
+$$
+
+What is the value of $\log _{2}(x y)$ ?
+
+\ans{$16$}
+
+\soln1 The first equation can be rewritten as $$6\log_x 2 + 4\log_{y^2} 2 = \dfrac{5}{3} \Longleftrightarrow 18\log_x 2 + 6\log_{y} 2 = {5} $$ and the second one as $$\log _{y} 64+\log _{x^{2}} 16=1 \Longleftrightarrow 6\log _{y}2 + 2\log _{x} 2=1.$$ Denote $\log_x 2 = a$ and $\log_y 2 = b$. So, we have the following system of equations
+
+\begin{equation*}
+    \begin{array}{rcl}
+        18a + 6b & = & 5 \\
+        6b + 2a & = & 1
+    \end{array}
+\end{equation*}
+Subtract both equations gives you $a = \frac{1}{4}$ which in turn gives you $x = 16 = 2^4$. Multiplying the second equation by $9$ then subtract it with the first gives you $b = 1/12$ which in turn gives you $4096 = 2^{12}$. Therefore, $\log_2 (xy) = \log_2 (2^{4+12}) = \boxed{16}.$
+
+\
+
+\soln2 {\sffamily (\href{https://cjquines.com/files/pmo2020quals.pdf}{From CJ Quines})} We can use the change of base formula to write all of the logarithms in base $2$. This gives the two equations as
+\[
+  \frac{\log_2 64}{\log_2 x} + \frac{\log_2 16}{\log_2 y^2} = \frac{5}{3} \qquad \text{and} \qquad \frac{\log_2 64}{\log_2 y} + \frac{\log_2 16}{\log_2 x^2} = 1.
+\]
+Writing $\log_2 x^2 = 2\log_2 x$ and $\log_2 y^2 = 2 \log_2 y$, we can rewrite the equations entirely using $u = \dfrac{1}{\log_2 x}$ and $v = \dfrac{1}{\log_2 y}$:
+\[
+  6u + 2v = \frac{5}{3} \qquad \text{and} \qquad 6v + 2u = 1.
+\]
+We add the two equations to get $8u + 8v = \frac{8}{3}$ and divide by $4$ to get $2u + 2v = \frac{2}{3}$. Subtracting from the first equation, we get $u = \frac{1}{4}$, and so $v = \frac{1}{12}$. Finally,
+$$\log_2(xy) = \log_2 x + \log_2 y = \frac{1}{u} + \frac{1}{v} = 16.$$
+
+\item {\sffamily (AIME)} Positive integers $a$ and $b$ satisfy the condition
+ $$\log_2\left(\log_{2^a} \left(\log_{2^b} {2^{1000}}\right)\right) = 0$$ Find the sum of all possible values of $a+b$.
+
+\ans{$1881$}
+
+ \sol The following expression can be \textit{transformed} into $$\implies \log_{2^a} \left(\log_{2^b} {2^{1000}}\right) = 1 \Longleftrightarrow \log_{2} \left(\dfrac{1000}{b}\log_{2} {2}\right) = a$$ which can be simplified into $$\log_{2} \left(\dfrac{1000}{b}\right) = a.$$ Note that $1000$ is not in the form $2^k$ because of its prime factorization: $1000 = 2^3 \cdot 125.$ As a result, we have two possible values for $b: 1000, 125, 250$ and $500$ which implies that the values of $a$ are $0$, $3, 2$ and $1$, respectively. Therefore, the sum is just $(1000 + 0) + (125 + 3) + (250 + 2) + (500 + 1) = \boxed{ 1881}$
+
+
+
+
+
+\item {\sffamily (2021 DIME)} If $x$ is a real number satisfying the equation $$9\log_3 x - 10\log_9 x = 18 \log_{27} 45$$ then the value of $x$ is equal to $m\sqrt{n}$, where $m$ and $n$ are positive integers, and $n$ is not divisible by the
+square of any prime. Find $m + n$.
+
+\ans{$140$}
+
+\sol We see that 
+
+\begin{equation*}
+    \begin{array}{rcl}
+        9\log_3 x - 10\left(\dfrac{\log x}{\log 3^2}\right) &  = & 18\left(\dfrac{\log 45}{\log 3^3}\right)\\
+         &  & \\
+
+          9\log_3 x - 5\log_3 x &  = & 6\log_3 45\\
+
+          \log_3 x &  = & \frac{3}{2}(\log_3 45)\\
+
+          \log_3 x &  = & \log_3 3^3 + \log_3 5^{\frac{3}{2}}\\
+& \vdots & \\
+           x &  = &  135\sqrt{5} \\
+    \end{array}
+\end{equation*}
+
+Therefore, $x = 135\sqrt{5}$, making $m+n = \boxed{140}.$
+\end{enumerate}
+
+\subsubsection*{Advanced}
+
+\begin{enumerate}[resume]
+   
+    \item {\sffamily (2006 AIME)} The sequence $a_1, a_2, \ldots $ is geometric with $a_1 = a$ and common ratio $r$, where $a$
+and $r$ are positive integers. Given that $\log_8 a_1 + \log_8 a_2 + \ldots + \log_8 a_{12} = 2006$, find the number of possible
+ordered pairs $(a, r).$
+
+\ans{$46$}
+
+\soln1 By the properties of a geometric series, each term more than $a_1=a$ is in the form of $ar^{n-1}$ where $2\leq n \leq 12$. So, the following sum is equivalent to $$\log_8 a+ \log_8 ar + \log_8 ar^2 + \ldots + \log_8 ar^{11} = \log_8 (a^{12}r^{66}) = \log_8 (8^{2006}).$$ By property, $$\implies a^{12} r^{66} = 8^{2006} \Longleftrightarrow a^{12} r^{66} = 2^{6018}.$$ We let $a=2^p$ and $r=2^q$. As a result, we have the following linear Diophantine equation: 
+
+\begin{equation*}
+    12p + 66q = 6018 \implies 2p + 11q = 1003
+\end{equation*}
+
+Take note that $11q \leq 1001 \implies q \leq 91$ such that $y$ is odd, and $p>0$. Therefore, $y \in (1,3,5,\ldots,91)$. Counting the cardinality of the solution set is equal to the number of solutions which is $\boxed{46}$ solutions!
+
+\
+
+
+\soln2{\sffamily (\href{{https://cdn.artofproblemsolving.com/attachments/d/d/97e05118c111e38bdad31ab4e94f08543f3590.pdf}}{Solution from Taco12})} We all know that the above sum is equivalent to solving $\log _{8}\left(a^{12} r^{66}\right)=2006$ for $a, r$ positive integers. $a^{12} r^{66}=8^{2006}=$ $\left(2^{3}\right)^{2006}=\left(2^{6}\right)^{1003}$ so $a^{2} r^{11}=2^{1003}$.
+
+The product of $a^{2}$ and $r^{11}$ is a power of 2. Since both numbers have to be integers, this means that $a$ and $r$ are themselves powers of 2 . Now, let $a=2^{x}$ and $r=2^{y}$ :
+
+$$
+\begin{aligned}
+\left(2^{x}\right)^{2} \cdot\left(2^{y}\right)^{11} & =2^{1003} \\
+2^{2 x} \cdot 2^{11 y} & =2^{1003} \\
+2 x+11 y & =1003 \\
+y & =\frac{1003-2 x}{11}
+\end{aligned}
+$$
+
+For $y$ to be an integer, the numerator must be divisible by 11 . This occurs when $x=1$ because $1001=91 * 11$. Because only even integers are being subtracted from 1003, the numerator never equals an even multiple of 11. Therefore, the numerator takes on the value of every odd multiple of 11 from 11 to 1001 . Since the odd multiples are separated by a distance of 22 , the number of ordered pairs that work is $1+\frac{1001-11}{22}=1+\frac{990}{22}=46$. (We must add 1 because both endpoints are being included.) So the answer is the same.
+
+
+\item {\sffamily (ARML)} Compute the largest real value of $b$ such that the solutions to the following equation are integers: $$(\log_{2^{10}} x^{2b})^2 = \log_{2^{10}} x^4$$
+
+\ans{$\sqrt{10}$}
+
+\soln1 Without loss of generality, $b$ must be positive. Note that the following equation is equivalent to 
+
+\begin{equation*}
+    \begin{array}{rcl}
+         (\log_{2^{10}} x^{{2b}})(\log_{2^{10}} x^{{2b}})&=& 4\log_{2^{10}} x  \\
+
+\\
+         
+         \frac{4b^2}{100}(\log_{2} x)^2&=& \frac{2}{5}(\log_{2} x)  \\
+\\
+         \frac{b^2}{25}(\log_{2} x)&=& \frac{10}{25} \\
+\\
+         b^2(\log_{2} x)&=& 10 \\
+    \end{array}
+\end{equation*}
+
+
+and we see that $$b^2 = \dfrac{10}{\log_2 x}.$$ For $b$ to maximize, $\log_2 x$ must be minimized. Therefore, $\max{(b)} = \sqrt{10}.$
+
+\soln2 We can invoke the change-of-bases technique for logarithms
+
+\begin{equation*}
+    \begin{array}{rcl}
+         \dfrac{1}{(\log_{2^{10}} x^{2b})^2}& = & \log_{x^4} 2^{10}  \\
+     & & \\
+          \dfrac{1}{(\log_{2^{10}} x^{2b})(\log_{2^{10}} x^{2b})}& = & \frac{5}{2}(\log_{x} 2)  \\
+     & & \\
+          \dfrac{100(\log_x 2)^2}{4b^2}& = & \frac{5}{2}(\log_{x} 2)  \\
+     & & \\  
+          \dfrac{25(\log_x 2)}{b^2}& = & \dfrac{25}{10} \\
+          
+          \end{array}
+          \end{equation*}
+  \begin{equation*}
+    \begin{array}{rcl}        
+     & & \\
+     
+           \dfrac{\log_x 2}{b^2}& = & \dfrac{1}{10} \\
+
+           \\
+           
+         b^2 & = & 10\log_x 2\\
+
+        
+    \end{array}
+\end{equation*}
+
+and it will lead to the same conclusion as \textbf{Solution 1}. Therefore, the answer is still the same.
+
+\begin{remark*}
+    You can see that if we increase the value of $x\in \ZZ$ then $b^2$ decreases. 
+\end{remark*}
+
+\item {\sffamily (2000 AIME).} The system of equations $$
+\begin{aligned}
+\log _{10}(2000 x y)-\left(\log _{10} x\right)\left(\log _{10} y\right) & =4 \\
+\log _{10}(2 y z)-\left(\log _{10} y\right)\left(\log _{10} z\right) & =1 \\
+\log _{10}(z x)-\left(\log _{10} z\right)\left(\log _{10} x\right) & =0
+\end{aligned}
+$$
+
+has two solutions $\left(x_{1}, y_{1}, z_{1}\right)$ and $\left(x_{2}, y_{2}, z_{2}\right)$. Find $y_{1}+y_{2}$.
+
+\ans{25}
+
+\sol Let $\log_{10} x = a, \log_{10} y = b$ and $\log_{10} z = c$. Then, by using Simon's Favorite Factoring Trick, the system becomes
+$$
+\begin{aligned}
+\log_{10}2  & =(1-a)(1-b) \\
+\log _{10}2 & =(1-b)(1-c) \\
+1 & = (1-c)(1-a)
+\end{aligned}
+$$
+
+Notice the equations (1) and (2) are equal. So,
+
+\begin{equation*}
+    (1-a)(1-b) = (1-b)(1-c) \implies a=c
+\end{equation*}
+
+We see that we have two solutions for both $a$ and $c$ which means that there are two solutions as well for both $x$ and $z$: 
+
+\begin{equation}
+    a_1=c_1 = 0 \implies x_1=z_1 = 1
+\end{equation}
+and
+\begin{equation}
+    a_2=c_2 = 2 \implies x_2=z_2 = 100
+\end{equation}
+
+Solving for $y$ gives us two solutions as well: $$y_1 = 5 \quad \text{and} \quad y_2 = 20.$$ Therefore, $y_1 + y_2 = \boxed{25}.$
+
+\item Let $S$ be the set of ordered triples $(x,y,z)$ of real numbers for which  $$\log_{10}(x+y) = z \quad \text{and} \quad \log_{10} (x^2 + y^2) = z + 1.$$
+
+There are real numbers $a$ and $b$ such that for all ordered triples $(x,y,z)$ in $S$, we have 
+$x^3 + y^3 = a \cdot 10^{3z} + b \cdot 10^{2z}$. Determine all possible values of $a+b$.
+
+\ans{29}
+
+\sol We can convert the two logarithms into its exponential equations:
+
+\begin{equation*}
+    10^z = x+y \quad \text{and} \quad 10^{z+1} = x^2 +y^2
+\end{equation*}
+
+Note that $x^3 +y^3 = (x+y)(x^2 + y^2 - xy).$ So far, we already know all the terms present in the factorization except for $xy$. So the thing we could do is to find $xy$ in terms of $10^z$. 
+
+\begin{equation*}
+    \begin{array}{rcl}
+         (10^z)^2& = & (x+y)^2 \\
+         
+         10^{2z}& = & x^2 + y^2 + 2xy\\
+
+         10^{2z}& = & 10^{z+1} + 2xy\\
+
+         \dfrac{10^{2z} - 10^{z+1}}{2}& = &  xy\\
+         & 
+    \end{array}
+\end{equation*}
+
+Therefore $x^3 + y^3$ is equivalent to 
+
+\begin{equation*}
+    \begin{array}{rcl}
+         x^3 + y^3 & = & (x+y)(x^2 +y^2 -xy) \\
+         
+         & = & 10^z\left(10^{z+1} -\dfrac{10^{2z} - 10^{z+1}}{2}\right) \\
+
+         && \\
+
+          & = &10^{2z+1} -\dfrac{10^{3z} - 10^{2z+1}}{2} \\
+
+
+          & = &10\cdot10^{2z} -\dfrac{10^{3z}}{2} + \dfrac{10\cdot10^{2z}}{2} \\
+
+           & = & 15 \cdot 10^{2z} - \dfrac{1}{2}\cdot 10^{3z} \\
+    \end{array}
+\end{equation*}
+
+We see that $a = -\frac{1}{2}$ and $b = 15.$ So, $a+b = \boxed{29}$. 
+
+\begin{remark*}
+   The problem focuses more on the algebraic manipulation aspect rather than on finding the values of $x,y,z$.
+\end{remark*}
+
+
+\item {\sffamily (2014 AIME II).} Let $f(x) = (x^2 +3x +2)^{\cos (\pi x)}$. Find the sum of all positive integers $n$ for which $$\Bigg | \sum_{k=1}^n \log_{10} f(k) \Bigg | = 1.$$
+
+\ans{21}
+
+\soln1 (An approach using base cases). Let the sum within the absolute value function be $S$. At first glance, it seems difficult to begin with. We will do some base cases to see how actually the sum $S$ \textit{behaves}:
+
+\begin{equation*}
+    \begin{array}{rcl}
+         \implies & & \displaystyle{\sum_{k=1}^n \log_{10}} \left(k^2 + 3k + 2\right)^{\cos (\pi k)}  \\
+
+         \implies & & \displaystyle{\sum_{k=1}^n \cos \pi k\left(\log_{10} \left(k+2\right)\left(k+1\right)\right)}  \\
+
+         \implies & & \displaystyle{\sum_{k=1}^n (-1)^k \left(\log_{10} \left(k+2\right)\left(k+1\right)\right)}  \\
+
+        
+    \end{array}
+\end{equation*}
+
+Let us do some base cases after:
+\begin{itemize}
+    \item If $n=1$, then we have $$(-1)\log (2 \cdot 3) =\log \left(\dfrac{1}{2\cdot3}\right) = \log (1/6) $$
+
+     \item If $n=2$, then we have $$(-1)\log (2 \cdot 3) + (1)\log (3 \cdot 4) = \log\left(\dfrac{1}{2 \cdot 3} \times (3 \cdot 4)\right) = \log 2$$
+
+     \item If $n=3$, then we have $$(-1)\log (2 \cdot 3) + (1)\log (3 \cdot 4) + (-1)\log (4 \cdot 5) = \log\left(\dfrac{1}{2 \cdot 3 \cdot 4 \cdot 5} \times (3 \cdot 4)\right)= \log 1/10 $$
+
+     \item If $n=4$, then we have $$\log\left(\dfrac{1}{2\cdot 3 \cdot 4 \cdot 5} \times (3 \cdot 4 \cdot 5 \cdot 6)\right) = \log 3$$
+
+     \item If $n=5$, then we have $$\log\left(\dfrac{1}{2\cdot 3 \cdot 4 \cdot 5 \cdot 6 \cdot 7} \times (3 \cdot 4 \cdot 5 \cdot 6)\right) = \log 1/14$$
+
+     \item If $n=6$, then we have $$\log\left(\dfrac{1}{2\cdot 3 \cdot 4 \cdot 5 \cdot 6 \cdot 7} \times (3 \cdot 4 \cdot 5 \cdot 6 \cdot 7 \cdot 8)\right) = \log 4$$
+\end{itemize}
+
+Notice that we have created a pattern. If we are going to continue it, we observe that the two possible values of $n$ are $3$ and $18.$ So the sum of these values is $\boxed{21}$ which is our answer!
+
+\
+
+\soln2 {(\sffamily \href{https://artofproblemsolving.com/wiki/index.php/2014_AIME_II_Problems/Problem_7}{Solution from AIME})}. The other way to solve the problem is through the concept of telescoping sum! Since we know that $\cos \pi x$ can be $-1$ if $x$ is odd and can be $1$ if $x$ is even, and $x^2 + 3x+2 = (x+1)(x+2)$, then\[\log_{10}f(x)=\log_{10}(x+1)+\log_{10}(x+2)\ \ \ \text{if }x \text{ is even}\]\[\log_{10}f(x)=-\log_{10}(x+1)-\log_{10}(x+2)\ \ \ \text{if }x \text{ is odd}\]Evaluating $\sum_{k=1}^n\log_{10}f(k)$, we have\[\sum_{k=1}^n\log_{10}f(k)= \log_{10}(n+2)-\log_{10}2=\log_{10}\frac{n+2}{2}\ \ \ \text{if }n \text{ is even}\]\[\sum_{k=1}^n\log_{10}f(k)= -\log_{10}(n+2)-\log_{10}2=-\log_{10}2(n+2)\ \ \ \text{if }n \text{ is odd}\]Setting each of the above quantities to $1$ and $-1$ and solving for $n$, we get possible values of $n=3$ and $n=18$ so our desired answer is $3+18=\boxed{021}$
+\end{enumerate}
+
+
+
+\newpage 
+
+\section{Problem set}
+
+\subsubsection*{Warmup}
+
+\begin{enumerate}
+    \item Which of the following numbers is the smallest?
+
+\begin{equation*}
+    3-\sqrt{5}, \dfrac{\pi}{2}, 0.7\times\sqrt{0.000576}, \quad \text{or} \quad \dfrac{4}{3-\sqrt{10}}
+\end{equation*}
+
+\item Show that $\log _{b} x+\log _{b} y=\log _{b} x y$.
+
+\item Arrange $A = \sqrt[4]{4}, B = \sqrt[5]{10}$ and $C = \sqrt[3]{21}$ in decreasing order.
+
+\item Find the relationship between $x,y,z \in \RR$ such that $7^x = 3^y = 21^z.$
+
+\item Determine all possible values of $\left(x+\sqrt{x^2-1}\right)^n$ if $x = \dfrac{1}{2}\left(a^{1/n} - a^{-1/n}\right)$ such that $a>0$ and $n \in \NN.$
+
+\item Given that $a, b$ are positive numbers, find the product of the two roots of $x$ such that $(\log ax)(\log bx) = k$.
+
+\item {\sffamily (1983 AIME)} Let $x,y,$ and $z$ exceed 1 and let $w$ be a positive number such that
+
+\begin{equation*}
+    \log_x w=24, \quad \log_y w = 40, \quad \text{and} \quad \log_{xyz} w = 12.
+\end{equation*}
+
+Find $\log_z w$
+
+\item {\sffamily (2023 AIME)} Positive real numbers $b \not= 1$ and $n$ satisfy the equations\[\sqrt{\log_b n} = \log_b \sqrt{n} \qquad \text{and} \qquad b \cdot \log_b n = \log_b (bn).\]The value of $n$ is $\frac{j}{k},$ where $j$ and $k$ are relatively prime positive integers. Find $j+k.$
+
+
+\end{enumerate}
+
+\subsubsection*{Intermediate}
+
+\begin{enumerate}[resume]
+    \item {\sffamily (AMC)} What is the value of $$\log_3 7 \cdot \log_5 9 \cdot \log_7 11 \cdot \log_9 13 \ldots \log_{21} 25 \cdot \log_{23} 27?$$
+
+    \item {\sffamily (\href{http://pmo.ph/wp-content/uploads/2018/08/PMO-20-Qualifying-Round-with-answers-only.pdf}{2018 PMO Q.13})} Find the sum of the solutions to the logarithmic equation $$x^{\log x} = 10^{2-3\log x + 2(\log x)^2}$$ where $\log x$ is the logarithm of $x$ to the base $10.$
+
+    \item {\sffamily (AIME)} The lengths of the sides of a triangle with positive area are $\log_{10} 12, \log_{10} 75,$
+and $\log_{10} n$, where $n$ is a positive integer. Find the number of possible values for
+$n$
+
+
+    \item How many digits does it take to write the base $10$ integer $4^{18}$ in base $3$, given that $\log_3 2 \approx .631$?
+
+    \item The points $A=(x_1,y_1)$  and $B = (x_2, y_2)$ are two points on the graph of $y= \log_2 x$. Through the 
+midpoint of the line segment $\overline{AB}$, a horizontal line is drawn to intersect the graph at $C = (x_3, y_3)$. Prove 
+that $x^2_3 = x_1x_2$.
+    
+\end{enumerate}
+
+\subsubsection*{Advanced}
+
+\begin{enumerate}[resume]
+
+\item {\sffamily (2018 AIME I)} For each ordered pair of real numbers $(x,y)$ satisfying\[\log_2(2x+y) = \log_4(x^2+xy+7y^2)\]there is a real number $K$ such that\[\log_3(3x+y) = \log_9(3x^2+4xy+Ky^2).\]Find the product of all possible values of $K$.
+
+   
+
+    \item {\sffamily (India 1986)}. Solve
+
+$$
+\left\{\begin{array}{l}
+\log _{2} x+\log _{4} y+\log _{4} z=2 \\
+\log _{3} y+\log _{9} z+\log _{9} x=2 \\
+\log _{4} z+\log _{16} x+\log _{16} y=2
+\end{array}\right.
+$$
+
+    
+\end{enumerate}
+
+\subsubsection*{Extra problems}
+
+\begin{enumerate}
+
+\item {\sffamily (\href{https://scontent.fdvo2-1.fna.fbcdn.net/v/t39.30808-6/330137312_925065471990454_686841670355512597_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFDlmqwweEsBNNpVn8GybSKjtoPDqPlgveO2g8Oo-WC9-FVSa1XmS9-lXzRJotWJ5VVq0tqcR8XnvtGL3ONY2a9&_nc_ohc=V514STXneXAAX8Ipwum&_nc_ht=scontent.fdvo2-1.fna&oh=00_AfDfeQVzI-AX9b1rixzsJqdLSETkLkn0rY8z7XwEfRzjWw&oe=645C7B34}{2023 PMO Areas})} The product of all real numbers $x$ satisfying $x^{2+\log_3(9x)} = \dfrac{2187}{x^2}$ can be written in the form $p/q$, where $p$ and $q$ are relatively prime positive integers. Find $p+q.$
+
+\item {\sffamily (\href{https://scontent.fdvo2-1.fna.fbcdn.net/v/t39.30808-6/330297762_614065074063788_8721811782695482350_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGBKlHCSL-IBIkz_L6PrxASZzYR7GqLf2hnNhHsaot_aAQQQ8NgNunBYGFqKzREd7_LSocAkgv3vIRqac43nGeY&_nc_ohc=eDH1ndfcyvkAX8xQez0&_nc_ht=scontent.fdvo2-1.fna&oh=00_AfCDzQChxCst2XdPy_koN9XavGtQYTur98Ba9tYssCqFbA&oe=645B93A9}{2023 PMO Areas})} Let $a,b,c$ be real numbers with $1<a<b<c$ that satisfy the equations
+
+\begin{equation*}
+    \begin{array}{rcl}
+        \log_a b + \log_b c + \log_c a & = & 6.5\\
+       \log_b a + \log_c b + \log_a c  & = & 5\\
+
+       
+         & 
+    \end{array}
+\end{equation*}
+
+Then $\text{max}\{\log_a b, \log_b c, \log_c a\}$ can be written in the form $\sqrt{x} + \sqrt{y}$, where $x$ and $y$ are positive integers. What is $x+y$?
+  \item {\sffamily \color{Gray} (2010 AIME)} Positive numbers $x, y$, and $z$ satisfy $x y z=10^{81}$ and $\left(\log _{10} x\right)\left(\log _{10} y z\right)+\left(\log _{10} y\right)\left(\log _{10} z\right)=468$. Find
+
+$$
+\sqrt{\left(\log _{10} x\right)^{2}+\left(\log _{10} y\right)^{2}+\left(\log _{10} z\right)^{2}}
+$$
+
+    \item {\sffamily (2009 AIME II)}. Suppose that $a, b$, and $c$ are positive real numbers such that $a^{\log _{3} 7}=27$, $b^{\log _{7} 11}=49$, and $c^{\log _{11} 25}=\sqrt{11}$. Find
+
+$$
+a^{\left(\log _{3} 7\right)^{2}}+b^{\left(\log _{7} 11\right)^{2}}+c^{\left(\log _{11} 25\right)^{2}}
+$$
+\end{enumerate}
+
+
+
+
+
+\newpage 
+
+
+\begin{thebibliography}{99}
+
+\bibitem{log1} Mathematical Society of the Philippines \& DOST--Science Education Institute (28 October 2017). \textit{20th Philippine Mathematical Olympiad Qualifying Stage.} Retrieved 03 May 2023 from \url{http://pmo.ph/wp-content/uploads/2018/08/PMO-20-Qualifying-Round-with-answers-only.pdf}
+
+\bibitem{log2} Mathematical Society of the Philippines \& DOST--Science Education Institute (12 October 2019). \textit{22th Philippine Mathematical Olympiad Qualifying Stage.} Retrieved 03 May 2023 from \url{http://pmo.ph/wp-content/uploads/2019/11/PMO-22-Qualifying-Round-with-answers.pdf}
+
+\bibitem{log3} Taco12 (n.d). \textit{Logarithms}. Retrieved 03 May 2023 from \url{https://cdn.artofproblemsolving.com/attachments/d/d/97e05118c111e38bdad31ab4e94f08543f3590.pdf}
+
+\bibitem{log4} Shyamal, A., Shyamal, D., Yang, K. \& Yang, R. (04 July 2020). \textit{Logarithms and Exponents}. Iowa City Math Circle Handouts. Retrieved 03 May 2023 from \url{https://iowacitymathcircle.org/wp-content/uploads/2020/07/Logarithms.pdf}
+
+\bibitem{log5} Quines, C.J. (6 October 2020). \textit{PMO 2020 Qualifying Stage}. Retrieved 03 May 2023 from \url{https://cjquines.com/files/pmo2020quals.pdf}
+
+\end{thebibliography}
+
+If you know the sources to any problem without one, see an error, have a correction, or have a question, feel free to contact me at \mailto{jrdobaob@addu.edu.ph}. 
+
+\section*{Dedication}
+
+\emph{ I dedicate this article to my late paternal grandmother, \textbf{Lola Rosa Bardiago Obaob}, who died more than a year ago for today is her 73rd birthday! I dedicate this article also to my late maternal grandfather, \textbf{Jonathan Boholist Dandan} who will have his 7th death anniversary by tomorrow.}
+\end{document}
