@@ -1,0 +1,219 @@
+\documentclass[11pt,paper={letter}]{scrartcl}
+\usepackage{jrdobaob}
+\usepackage{float}
+
+
+
+\begin{document}
+
+\title{MATHWIZZ 2023 Elims Problems (Part 2)}
+\subtitle{{\sffamily \textbf{Problems of the Week}} (2023 Edition)}
+\author{\includegraphics[width=1.5in]{logo.png}}
+
+\maketitle
+
+
+This is the second part of our \textbf{MATHWIZZ 2023 Elims Problems} series.  If you see any typographical errors, wrong calculations, feel free to contact me at \mailto{jrdobaob@addu.edu.ph}
+
+\begin{enumerate}
+    \item[\textbf{11.}] The Adamson Falcons have a 0.6 probability of winning a game. In a 3-game series where the first team to win 2 games wins the series, what is the probability that the Adamson Falcons win the series?
+
+    \ans{$\dfrac{54}{125}$}
+
+    \sol For Adamson Falcons to win the game series, the probability of the team to win is $$\binom{3}{2}(0.4)(0.6)^2 = 3 \times \left(\dfrac{2}{5}\right)\times \left(\dfrac{3}{5}\right)^2 = \boxed{\frac{54}{125}.}$$
+ \item[\textbf{12.}] What is the smallest value of $n$ such that the sum of the first $n$ positive integers exceeds $2023 ?$
+
+ \ans{$64$}
+
+ \sol This is mathematically expressed as $$\dfrac{n(n+1)}{2} > 2023 \Longleftrightarrow n^2 + n - 2023 > 0.$$ Now we can solve this quadratic inequality by the quadratic formula. 
+
+ \begin{equation*}
+     \begin{array}{rcl}
+          n & = & \dfrac{-1 \pm \sqrt{1 - 4(-2023)}}{2} \\
+          \\
+          n & = & \dfrac{-1 \pm \sqrt{16185}}{2} \\        
+     \end{array}
+ \end{equation*}
+
+ We are only interested in the positive solution. So, $n \approx 63.7$ which can be rounded off to $64$.
+ 
+
+ 
+\item[\textbf{13.}] If $a$ and $b$ are the roots of the quadratic equation $x^2-9 x+4=0$, then $a \sqrt{b}+b \sqrt{a}=c \sqrt{d}$, where $c$ and $d$ are positive integers and $\mathrm{d}$ is square-free (has no factor that is a perfect square other than 1 ). What is the value of $c+d$ ?
+
+\ans{$15$}
+
+\sol The following equation can be rewritten as $$\sqrt{ab}\left(\sqrt{a} + \sqrt{b}\right) = c\sqrt{d} \implies \sqrt{ab}\left(\sqrt{(\sqrt{a} + \sqrt{b})^2}\right)\implies \sqrt{ab}\left(\sqrt{a+b+2\sqrt{ab}}\right)$$ By Vieta's formulas, $a+b = 9$ and $ab = 4$. Hence, $$\implies \sqrt{4}\sqrt{9 + 2\sqrt{4}}= 2\sqrt{13}.$$ Therefore, $c+d = \boxed{15}$
+\item[\textbf{14.}] 12 points are equally spaced on a circle. How many right triangles are there whose vertices are three of those points?
+
+
+\ans{$60$ ways}
+
+\sol Recall the \href{https://brilliant.org/wiki/thales-theorem/}{Thales' theorem} which basically states that if a right triangle is inscribed in a circle then one of its sides must be the diameter of the circle and its vertex can be any one of the points of the circle.
+
+Using this principle, the number of ways to choose 2 points to make up a diameter is $6$ ways while the number of ways to choose a third point is $\binom{12-2}{1} = 10$ ways. Therefore, our answer is $10 \times 6 = \boxed{60}$ ways.
+\item[\textbf{15.}] What is the value of $\cos \frac{\pi}{7}-\cos \frac{2 \pi}{7}+\cos \frac{3 \pi}{7}$?
+
+\ans{$\dfrac{e^{i\pi/7}+1}{2(e^{i\pi/{7}}-1)}$}
+
+\sol  By \href{https://cdn.artofproblemsolving.com/attachments/0/c/3d45222c7fc8cd7562d0a3d3134c1042882c36.pdf}{roots of unity}, let $x = e^{i\pi/7}$ and $x^7 = -1$. Next, we are going to use formula of sine and cosine functions dervied from De Moivre's theorem:
+
+
+\begin{theorem}[General formulas for sine and cosine]
+    Let $\theta$ be an angle and let $x = e^{i\theta}$ for all integers $k$. Then,
+
+    \begin{equation*}
+        \cos \theta = \dfrac{1}{2}\left(x^k + \dfrac{1}{x^k} \right)
+    \end{equation*}
+
+    and
+
+    
+    \begin{equation*}
+        \cos \theta = \dfrac{1}{2i}\left(x^k - \dfrac{1}{x^k} \right)
+    \end{equation*}
+
+\end{theorem}
+So,
+
+\begin{equation}
+    \cos \pi/7 = \dfrac{1}{2}\left(x + \dfrac{1}{x}\right)
+\end{equation}
+\begin{equation}
+    \cos 2\pi/7 = \dfrac{1}{2}\left(x^2 + \dfrac{1}{x^2} \right) 
+ \end{equation}
+
+\begin{equation}
+    \cos 3\pi/7 = \dfrac{1}{2}\left(x^3 + \dfrac{1}{x^3} \right) 
+ \end{equation}
+
+ So, the original expression is equivalent to $$\implies \dfrac{1}{2}\left(x - x^2 + x^3 + \dfrac{1}{x} - \dfrac{1}{x^2} + \dfrac{1}{x^3}\right)$$ Therefore,  
+
+ \begin{equation*}
+      \dfrac{1}{2}\left(x - x^2 + x^3 + \dfrac{1}{x} - \dfrac{1}{x^2} + \dfrac{1}{x^3}\right) \Longleftrightarrow  \dfrac{1}{2}\left(x - x^2 + x^3 - x^{4} + x^{5} - x^{6}\right)
+ \end{equation*}
+
+
+ Notice that the inner term is a geometric series. So, 
+
+ \begin{equation*}
+      \implies \dfrac{1}{2}\left( (-1+  x - x^2 + x^3 - x^{4} + x^{5} - x^{6}) + 1 )\right) \Longleftrightarrow  \dfrac{1}{2}\left( \dfrac{1-x^7}{x-1} + 1 \right) 
+ \end{equation*}
+
+ Knowing that $x^7 = -1$ and $x = e^{i\pi /7}$, hence the answer is \fbox{$\dfrac{e^{i\pi/7}+1}{2(e^{i\pi/{7}}-1)}$.}
+
+
+\item[\textbf{16.}] ${ABC}$ is an isosceles triangle with $AC ={AB}=10$ and $BC=16$. A rectangle has one of its sides on ${BC}$, a vertex on ${AB}$, and another vertex on $A C$. What is the maximum possible area of that rectangle?
+
+\ans{24}
+
+\sol We can illustrate the figure in the following manner:
+
+\begin{center}
+    \input{16}
+\end{center}
+Know that the area of rectangle is $xh$. By Pythagorean theorem, the height of $ABC$ is $6.$ By similar triangles, $$\dfrac{6}{8} = \dfrac{6-h}{\frac{x}{2}} \Longleftrightarrow h = 6 - \frac{3x}{8}.$$ Therefore, the area of the rectangle is equal to $$A = x\left( 6 - \frac{3x}{8}\right) = \frac{48x - 3x^2}{8}.$$
+
+This is easy to maximize because this can be done by completing the square: $$A =\frac{48x - 3x^2}{8} \Longleftrightarrow \frac{3(64) -3(x-8)^2}{8}.$$ The maximum area can be achieved when $x=8$. Therefore, the maximum area is \fbox{$24$.} 
+
+
+\item[\textbf{17.}] What is the area of the region bounded by $|x+2 y|=24$ and $|x-2 y|=24$ ?
+
+\ans{$576$}
+
+\sol Take note that the functions given are absolute value functions, and their inner functions are linear. If you are going to graph these functions then you get a \textit{rhombus}. Moving on, to find the area of the region, we are going to find their $x$-intercepts and $y$-intercepts.
+
+\textbf{Equation 1}: ($|x+2y| = 24$).
+
+\begin{itemize}
+    \item $x$-intercepts: $(-24, 0)$ and $(24,0)$ 
+    
+    \item $y$-intercepts: $(0, 12)$ and $(0,-12)$
+\end{itemize}
+
+
+\textbf{Equation 2}: ($|x-2y| = 24$). $x$-intercepts: $(0,-12)$ and $(0,12)$.
+
+\begin{itemize}
+    \item $x$-intercepts: $(-24, 0)$ and $(24,0)$ 
+    
+    \item $y$-intercepts: $(0, -12)$ and $(0,12)$
+\end{itemize}
+
+As you can see their $x$-intercepts and $y$-intercepts are the same. Therefore, the area of the region is $48 \cdot 12 = \boxed{576.}$
+
+\item[\textbf{18.}] In the Cartesian plane, a light beam with a slope of 2 hits a reflective surface with a slope of 3. What is the slope of the reflected light beam from the surface?
+
+\ans{$11/2$}
+
+\sol The problem can be solved by using the law of reflection.
+
+\begin{theorem}[Law of reflection]
+The law states that as beam strikes a reflective surface, the angle of incidence from the beam to the surface is equal to the angle of reflection.
+\end{theorem}
+
+Consider two linear equations:
+
+\begin{equation*}
+    \begin{cases}
+   y = 2x \quad (1)\\ y = 3x \quad (2)  \\
+    \end{cases}
+\end{equation*}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3.8in]{18.png}
+    \caption{The {\color{orange} orange line} represents the perpendicular line of the {\color{blue}blue} line {\color{blue} $y =3x$}. The {\color{green!50!black} green} line represents line {\color{green!50!black}$y=2x$}}.
+    \label{fig:my_label}
+\end{figure}
+
+The first thing we will do is to find the angle between the green and blue lines and that is, 
+
+\begin{equation*}
+    \tan \theta  = \dfrac{|{\Delta \color{green!50!black} \text{green}} - \Delta{\color{blue}\text{blue}}|}{1+{\Delta \color{green!50!black} \text{green}}\Delta{\color{blue}\text{blue}}} = \dfrac{1}{7} \implies \theta = \arctan \dfrac{1}{7}
+\end{equation*}
+
+By the law of reflection, 
+
+\begin{equation*}
+    \tan \left(\arctan 3 + \arctan \frac{1}{7}\right) = \dfrac{|3 + \frac{1}{7}|}{1-3(\frac{1}{7})} = \frac{11}{2}.
+\end{equation*}
+
+Therefore, the slope of the reflected light from the surface is \fbox{$11/2$}
+
+
+
+
+
+\item[\textbf{19.}] Find a real value of $x$ such that $8 x^3-36 x^2+54 x-39=0$.
+
+\ans{$\frac{\sqrt[3]{12}+3}{2}$}
+
+\sol Note that $$(2x-3)^3 = 8x^3 - 36x^2 + 54x - 27.$$ Notice that the first three terms to the right are identical to the first three terms of the given equation. So, we have $$(2x-3)^3 - 12 = 0 \implies 2x - 3 = \sqrt[3]{12} \implies x = \frac{\sqrt[3]{12}+3}{2}.$$ Therefore, we have found our answer.
+\item[\textbf{20.}] A fair coin is flipped seven times. What is the probability that there will be no consecutive heads among the results?
+
+\ans{$\dfrac{17}{64}$}
+
+ \sol Let $P$ be the event where there are no consecutive heads among the seven flips. We can divide such event into scenarios.
+
+\begin{itemize}
+ \item \textbf{Scenario 1.} There are no heads. The probability of this to happen is is $(\frac{1}{2})^7$
+
+\item \textbf{Scenario 2.} 1 head and 6 tails: $$\_T\_T\_T\_T\_T\_T\_$$ The head appears in the seven spaces shown above. The probability of this to happen is $7 \times (\frac{1}{2}) (\frac{1}{2})^6 = 7 (\frac{1}{2})^7$
+
+  \item \textbf{Scenario 3.} 2 heads and 5 tails: $$\_T\_T\_T\_T\_T\_$$ The probability of this to happen is $\frac{6\times5}{2!} \times (\frac{1}{2})^2 (\frac{1}{2})^5 = 15 (\frac{1}{2})^7$
+
+  \item \textbf{Scenario 4.} 3 heads and 4 tails: $$\_T\_T\_T\_T\_$$The probability of this to happen is $\frac{5\times4\times 3}{3!} \times (\frac{1}{2})^3 (\frac{1}{2})^4 = 10 (\frac{1}{2})^7$
+
+  \item \textbf{Scenario 5.} 4 heads and 3 tails: $$\_T\_T\_T\_$$The probability of this to happen is $\frac{4\times3\times2\times1}{4!} \times (\frac{1}{2})^3 (\frac{1}{2})^4 =  (\frac{1}{2})^7$
+
+
+  \end{itemize}
+
+  Therefore, $P =(\frac{1}{2})^7+ 7(\frac{1}{2})^7+ 10(\frac{1}{2})^7 + 15(\frac{1}{2})^7 + (\frac{1}{2})^7 =\boxed{ \frac{17}{64}}$
+\end{enumerate}
+
+\emph{Happy Mother's Day to every mother, grandmother and mother figure!}
+
+\end{document}
