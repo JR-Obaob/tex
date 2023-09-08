@@ -1,7 +1,7 @@
 %jrdobaob.sty
 %
 % Copyright (c) 2023 Josh Robert Obaob
-% Last Update: 12. 07. 2023
+% Last Update: 08. 09. 2023
 %
 % The following package shall be called "The Code" for the following statements below:
 %
@@ -23,7 +23,7 @@
 \newif\ifjronodefault\jronodefaultfalse
 \newif\ifjronounicode\jronounicodefalse
 \newif\ifjroqhv\jroqhvfalse
-\newif\ifjroppl\jropplfalse
+\newif\ifjrosf\jrosffalse
 \newif\ifjrowide\jrowidefalse
 \newif\ifjrothin\jrothinfalse
 \newif\ifjrotutor\jrotutorfalse
@@ -41,7 +41,7 @@
 \DeclareOption{wide}{\jrowidetrue}
 \DeclareOption{thin}{\jrothintrue}
 
-\DeclareOption{ppl}{\jroppltrue}
+\DeclareOption{sf}{\jrosftrue}
 \DeclareOption{qhv}{\jroqhvtrue}
 \DeclareOption{tutor}{\jrotutortrue}
 \DeclareOption{alttitle}{\jroalttitletrue}
@@ -99,10 +99,11 @@
 \RequirePackage[T1]{fontenc}
 \fi
 
-\ifjroppl
+\ifjrosf
 
-\RequirePackage[T1]{fontenc}
-\usepackage{palatino}
+\RequirePackage{sfmath}
+
+\renewcommand{\familydefault}{\sfdefault}
 
 \fi 
 
@@ -257,7 +258,7 @@
 
 \ifjroassess
   \RequirePackage{titling}
-  \pretitle{\vspace{-6em} \begin{flushleft} \bfseries \sffamily \Large}
+  \pretitle{\vspace{-6em} \begin{flushleft} \bfseries \sffamily \LARGE}
   \ifjrowide
     \pretitle{\begin{flushleft} \bfseries \sffamily \Large}
   \fi
@@ -293,6 +294,7 @@
     \renewcommand{\footrulewidth}{0.0pt}
     \pagestyle{fancy}
     \fancyhead{}
+    \fancyfoot{}
     \fancyfoot[R]{\thepage}
     \fancyhead[L]{\sffamily \thetitle}
     \fancyhead[R]{\theauthor}
@@ -668,6 +670,7 @@
 % Commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\mailto}[1]{\href{mailto:#1}{\texttt{#1}}}
+\newcommand{\joshsf}[1]{{\sffamily \color{Gray} #1}}
 \newcommand{\joshsansbf}[1]{\sffamily \textbf{#1}}
 \newcommand{\fourch}[4]{
   \begin{tabular}{*{4}{@{}p{0.23\textwidth}}}
@@ -705,10 +708,13 @@
 \newcommand{\ray}[1]{\overrightarrow{#1}} 
 \newcommand{\seg}[1]{\overline{#1}}
 \newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\joshlim}[1]{\displaystyle{\lim_{#1}}}
 
 \newcommand{\dg}{^\circ}
 \newcommand{\dydx}{\frac{dy}{dx}\,}
 \newcommand{\ddx}{\frac{d}{dx}\,}
+\newcommand{\dint}[1]{\displaystyle{\int}{#1}\,}
+\newcommand{\dsum}[1]{\displaystyle{\sum}{#1}\,}
 
 \renewcommand{\land}{\wedge}
 \renewcommand{\lor}{\vee}
