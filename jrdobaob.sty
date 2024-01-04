@@ -1,7 +1,7 @@
 %jrdobaob.sty
 %
 % Copyright (c) 2023 Josh Robert Obaob
-% Last Update: 09. 28. 2023
+% Last Update: 01. 04. 2024
 %
 % The following package shall be called "The Code" for the following statements below:
 %
@@ -527,6 +527,26 @@
       rightmargin = -10pt
     }
 
+
+\mdfdefinestyle{jrvioletmdbox}{%
+      frametitlefont = \sffamily  \color{violet!60!black},
+      frametitlebelowskip = 0pt,
+      splittopskip = 0pt,
+      innertopmargin = 5pt,
+      linewidth = 3pt,
+      skipabove = 12pt,
+      skipbelow = 0pt,
+      innerleftmargin = 7pt,
+      innerrightmargin = 10pt,
+      innerbottommargin = 7pt,
+      linecolor = red!60!black,
+      backgroundcolor = purple!20!white,
+      hidealllines = true,
+      leftline = true,
+       font = \normalfont, 
+      leftmargin = -10pt,
+      rightmargin = -10pt
+    }
       \declaretheoremstyle[
       spaceabove = 5pt,
       spacebelow = 5pt,
@@ -575,6 +595,23 @@
     \declaretheorem[style=jrredexbox,name=Example,sibling=exboxed]{jrexredboxed}
     \declaretheorem[style=jrredexbox,name=Exercise,sibling=exboxed]{jrexrredboxed}
     \declaretheorem[style=jrredexbox,name=Problem,sibling=exboxed]{jrprobredboxed}
+
+
+    %Violet_NEW
+     \declaretheoremstyle[
+     spaceabove = 5pt,
+      spacebelow = 5pt,
+      headfont = \sffamily \bfseries \color{violet!60!black},
+      bodyfont = \normalfont,
+      mdframed = {style = jrvioletmdbox}
+    ]{jrvioletexbox}
+
+    \declaretheorem[style=jrvioletexbox,name=Example,sibling=exboxed]{jrexvioletboxed}
+    \declaretheorem[style=jrvioletexbox,name=Exercise,sibling=exboxed]{jrexrvioletboxed}
+    \declaretheorem[style=jrvioletexbox,name=Problem,sibling=exboxed]{jrprobvioletboxed}
+    
+    
+    %%VIOLET_NEW
 
      \fi
      
