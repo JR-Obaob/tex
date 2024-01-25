@@ -1,7 +1,7 @@
 %jrdobaob.sty
 %
-% Copyright (c) 2023 Josh Robert Obaob
-% Last Update: 01. 04. 2024
+% Copyright (c) 2024 Josh Robert Obaob
+% Last Update: 01. 25. 2024 (NOTO FINAL)
 %
 % The following package shall be called "The Code" for the following statements below:
 %
@@ -29,6 +29,7 @@
 \newif\ifjrotutor\jrotutorfalse
 \newif\ifjroassess\jroassessfalse
 \newif\ifjroassesspro\jroassessprofalse
+\newif\ifjronoto\jronotofalse
 \newif\ifjroalttitle\jroalttitlefalse
 \newif\ifjroboxthm\jroboxthmfalse
 \newif\ifjroboxthmextra\jroboxthmextrafalse
@@ -47,6 +48,7 @@
 \DeclareOption{alttitle}{\jroalttitletrue}
 \DeclareOption{assess}{\jroassesstrue}
 \DeclareOption{assesspro}{\jroassessprotrue}
+\DeclareOption{noto}{\jronototrue}
 
 
 \ProcessOptions\relax
@@ -99,10 +101,17 @@
 \RequirePackage[T1]{fontenc}
 \fi
 
+\ifjronoto
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage[sfdefault]{notomath}
+
+\fi
+
+
 \ifjrosf
 
 \RequirePackage{sfmath}
-
 \renewcommand{\familydefault}{\sfdefault}
 
 \fi 
@@ -110,7 +119,7 @@
  \ifjronounicode
 
  \else
-    \RequirePackage[T1]{fontenc}
+    %\RequirePackage[T1]{fontenc}
 
 
 
@@ -728,7 +737,7 @@
 \newcommand{\soln}[1]{{\sffamily \bfseries Solution #1.}\;}
 \newcommand{\back}[1]{{\sffamily \bfseries Background.}\;}
 \newenvironment{rem}%
-{\noindent \ignorespaces \footnotesize \sffamily \sansmath {\bfseries Remark.}}%
+{\noindent \ignorespaces \normalfont \sffamily \sansmath {\bfseries Remark.}}%
 {\ignorespacesafterend}
 
 \newcommand{\CC}{\mathbb C}
